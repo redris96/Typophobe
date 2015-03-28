@@ -75,9 +75,9 @@ function x(event) {
             while (legit[v] != " ") v++;
             var temp = document.getElementById("dis").innerHTML;
             if (c == 0)
-                document.getElementById("dis").innerHTML = legit.slice(0,pr) + '<span style="color: #ff0000">' + legit.substr(pr, i - pr) + "</span>" + '<span style="background-color: #9c8c8c">' + legit.substr(i, v - i) + "</span>" + legit.substr(v);
+                document.getElementById("dis").innerHTML = legit.substring(0,pr) + '<span style="color: #ff0000">' + legit.substr(pr, i - pr) + "</span>" + '<span style="background-color: #9c8c8c">' + legit.substr(i, v - i) + "</span>" + legit.substr(v);
             else
-                document.getElementById("dis").innerHTML = legit.slice(0,pr) + '<span style="color: #00ff21">' + legit.substr(pr, i - pr) + "</span>" + '<span style="background-color: #9c8c8c">' + legit.substr(i, v - i) + "</span>" + legit.substr(v);
+                document.getElementById("dis").innerHTML = legit.substring(0,pr) + '<span style="color: #00ff21">' + legit.substr(pr, i - pr) + "</span>" + '<span style="background-color: #9c8c8c">' + legit.substr(i, v - i) + "</span>" + legit.substr(v);
             flag = 1; pr = i;
         }
     }
@@ -96,7 +96,7 @@ function reset() {
     document.getElementById("typeit").value = "";
     i = 0;
     flag = 1;
-    gc = 0;
+    gc = 0; pr = 0;
     c, wc = 0; state = 0;
     document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
     document.getElementById("wc").innerHTML = "Words: 0";
