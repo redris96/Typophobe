@@ -21,7 +21,14 @@
         }
     });
 })();
-
+/*function togglefunc() {
+    var toggle = document.getElementById("toggle1");
+    if (toggle.checked == checked) {
+        music.play;
+    } else {
+        music.pause;
+    }
+}*/
 var legit = "The quick brown fox jumped over the lazy dog.";
 var i = 0;
 var flag = 1;
