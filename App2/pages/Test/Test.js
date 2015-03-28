@@ -8,7 +8,7 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
             // TODO: Initialize the page here.
-            document.getElementById("dis").innerHTML = '<span style="background-color: #fcf700">' + legit + '</span>';
+            document.getElementById("dis").innerHTML = legit;//'<span style="background-color: #fcf700">' + legit + '</span>';
         },
 
         unload: function () {
@@ -65,7 +65,9 @@ function x(event) {
             document.getElementById("wc").innerHTML = "WPM: " + parseInt(wc/(60-timeInSecs)*60);
             document.getElementById("acc").innerHTML = "Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%";
             //Highlight the next word
-            document.getElementById("dis").innerHTML = legit.substr(0, i) + '<span style="background-color: #fcf700">' + legit.substr(i) + "</span>";
+            var v = i;
+            while (legit[v] != " ") v++;
+            document.getElementById("dis").innerHTML = legit.substr(0, i) + '<span style="background-color: #fcf700">' + legit.substr(i,v-i) + "</span>"+legit.substr(v);
             flag = 1;
         }
     }
@@ -79,7 +81,7 @@ function reset() {
     flag = 1;
     gc = 0;
     c, wc = 0; state = 0;
-    document.getElementById("dis").innerHTML = '<span style="background-color: #fcf700">' + legit + '</span>';
+    document.getElementById("dis").innerHTML = legit;//'<span style="background-color: #fcf700">' + legit + '</span>';
     document.getElementById("wc").innerHTML = "Words: 0";
     document.getElementById("acc").innerHTML = "Accuracy: 0%";
     clearInterval(ticker);
