@@ -46,10 +46,9 @@ function x() {
                 i++;
             i++;
             wc++;
-            document.getElementById("wc").innerHTML = "Words: " + wc;
+            document.getElementById("wc").innerHTML = "Words:" + wc;
             document.getElementById("acc").innerHTML = "Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%";
             //Highlight the next word
-            document.getElementById("dis").innerHTML = legit.substr(0, i) + '<span style="background-color: #3c413c">' + legit.substr(i) + "</span>";
             flag = 1;
         }
     }
@@ -69,7 +68,7 @@ function x() {
         if (change.length > li - i)
             fl = 1;
         if (change[j - 1] == legit[li - 1] && fl == 0)
-            c=c;//document.getElementById("body").style.backgroundColor = "green";
+            c = c; //document.getElementById("body").style.backgroundColor = "green";
         else {
             //document.getElementById("body").style.backgroundColor = "red";
             c = 0;
@@ -82,7 +81,4 @@ function reset() {
     flag = 1;
     gc = 0;
     c, wc = 0;
-    document.getElementById("dis").innerHTML = '<span style="background-color: #3c413c">' + legit + '</span>';
-    document.getElementById("wc").innerHTML = "Words: 0";
-    document.getElementById("acc").innerHTML = "Accuracy: 0%";
 }
