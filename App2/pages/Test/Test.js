@@ -63,13 +63,13 @@ function x(event) {
                 fl = 1;
             if (fl == 1)
                 c = 0;
-            gc += c + 1;
+            gc += c;
             while (legit[i] != " " && i < legit.length)
                 i++;
             i++;
             wc++;
             document.getElementById("wc").innerHTML = "WPM: " + parseInt(wc/(60-timeInSecs)*60);
-            document.getElementById("acc").innerHTML = "Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%";
+            document.getElementById("acc").innerHTML = "Accuracy: " + (Number((gc / (i-wc)) * 100).toPrecision(4)).toString() + "%";
             //scroll
             if (i>wh)
             {
