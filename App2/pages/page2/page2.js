@@ -68,3 +68,10 @@ function x() {
         }
     }
 }
+
+function reset() {
+    i = 0;
+    flag = 1;
+    gc = 0;
+    c, wc = 0;
+}
