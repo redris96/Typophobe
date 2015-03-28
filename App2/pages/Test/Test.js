@@ -79,8 +79,13 @@ function x(event) {
 }
 
 function reset() {
-    var msg = new Windows.UI.Popups.MessageDialog("Your WPM is:"+" and your accuracy is: ");
+    var msg = new Windows.UI.Popups.MessageDialog("Your WPM is:" + " and your accuracy is: ");
+    /*msg.commands.append(new Windows.UI.Popups.UICommand(
+            "Try again",));
+    msg.commands.append(
+        new Windows.UI.Popups.UICommand("Back", commandInvokedHandler));*/
     msg.showAsync();
+    document.getElementById("typeit").value = "";
     i = 0;
     flag = 1;
     gc = 0;
@@ -111,6 +116,7 @@ function tick() {
     }
     else {
         clearInterval(ticker);
+        reset();
         dis();
     }
 
