@@ -35,12 +35,27 @@ var flag = 1;
 var whole;
 var gc = 0;
 var c, wc = 0;
-function x() {
-    var change = document.getElementById("typeit").value;
-    var len = change.length;
-    if (change[len - 1] == " ") {
+function x(event) {
+    var a = event.keyCode;
+    if (a==32) {
+        var change = document.getElementById("typeit").value;
         document.getElementById("typeit").value = "";
         if (flag == 0) {
+            var fl = 0;
+            var li = i;
+            c = 0;
+            for (j = 0; j < change.length && li < legit.length && legit[li] != " "; li++, j++) {
+                if (change[j] == legit[li])
+                    c++;
+                else {
+                    fl = 1;
+                    break;
+                }
+            }
+            if (change.length > li - i+1)
+                fl = 1;
+            if (fl == 1)
+                c = 0;
             gc += c + 1;
             while (legit[i] != " " && i < legit.length)
                 i++;
@@ -55,25 +70,6 @@ function x() {
     }
     else {
         flag = 0;
-        var fl = 0;
-        var li = i;
-        c = 0;
-        for (j = 0; j < change.length && li < legit.length && legit[li] != " "; li++, j++) {
-            if (change[j] == legit[li])
-                c++;
-            else {
-                fl = 1;
-                break;
-            }
-        }
-        if (change.length > li - i)
-            fl = 1;
-        if (change[j - 1] == legit[li - 1] && fl == 0)
-            c=c;//document.getElementById("body").style.backgroundColor = "green";
-        else {
-            //document.getElementById("body").style.backgroundColor = "red";
-            c = 0;
-        }
     }
 }
 
