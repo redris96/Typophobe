@@ -108,9 +108,13 @@ function tick() {
         timeInSecs--;
     }
     else {
-        clearInterval(ticker); // stop counting at zero
-        // startTimer(60);  // remove forward slashes in front of startTimer to repeat if required
+        clearInterval(ticker);
+        dis();
     }
 
     document.getElementById("countdown").innerHTML = "Countdown: " + secs;
+}
+
+function dis() {
+    document.getElementById("typeit").disabled = true;
 }
