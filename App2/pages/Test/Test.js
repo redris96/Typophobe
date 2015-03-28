@@ -79,7 +79,7 @@ function x(event) {
 }
 
 function reset() {
-    var msg = new Windows.UI.Popups.MessageDialog("Your WPM is:" + " and your accuracy is: ");
+    var msg = new Windows.UI.Popups.MessageDialog("WPM: " + wc + "\nAccuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%");
     /*msg.commands.append(new Windows.UI.Popups.UICommand(
             "Try again",));
     msg.commands.append(
@@ -95,6 +95,8 @@ function reset() {
     document.getElementById("acc").innerHTML = "Accuracy: 0%";
     clearInterval(ticker);
     document.getElementById("countdown").innerHTML = "Countdown: 60";
+    document.getElementById("typeit").focus();
+    document.getElementById("typeit").disabled = false;
 }
 
 var timeInSecs;
@@ -116,10 +118,10 @@ function tick() {
     }
     else {
         clearInterval(ticker);
-        reset();
         dis();
+        reset();
     }
-
+    
     document.getElementById("countdown").innerHTML = "Countdown: " + secs;
 }
 
