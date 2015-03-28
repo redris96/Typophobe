@@ -19,12 +19,13 @@
         </header>
         <section class="page-section" aria-label="Main content" role="main">
             <center>
-                    <div id="dis" style="width:80%;height:160px;margin:50px;overflow-y: scroll;font-size:260%;"><span style="background-color: #9c8c8c">lol</span></div>
+                    <div id="dis" style="width:80%;height:160px;margin:50px;overflow-y: auto;font-size:260%;"><span style="background-color: #9c8c8c">lol</span></div>
                     <input type="text" id="typeit" onkeyup="x(event)" autofocus onkeydown="startTimer(60)"/> <br /><br/>
                     <h3 id="acc">Accuracy: 0%</h3>
                     <h3 id="wc">WPM: 0</h3> 
                     <h3 id="countdown">Countdown: 60</h3> <br />
                     <button id="but" onclick="reset()">Reset</button>
+                    <button id="scr" onclick="doScroll()">Scroll</button>
             </center>
             <Button id="musicButton" style="position: absolute; right: 0; bottom: 0;" onclick="toggleMusic()">Music: OFF</Button>
             <audio id="music" src="/01 A Night Of Dizzy Spells.mp3" />

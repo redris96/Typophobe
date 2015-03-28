@@ -141,3 +141,7 @@ function tick() {
 function dis() {
     document.getElementById("typeit").disabled = true;
 }
+
+function doScroll() {
+    $('#dis').scrollTop($('#dis').scrollTop() + 10);
+}
