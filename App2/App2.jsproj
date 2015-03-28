@@ -66,9 +66,9 @@
     <Content Include="pages\home\home.html" />
     <Content Include="pages\home\home.js" />
     <Content Include="default.html" />
-    <Content Include="pages\Start\Start.css" />
-    <Content Include="pages\Start\Start.html" />
-    <Content Include="pages\Start\Start.js" />
+    <Content Include="pages\page2\page2.css" />
+    <Content Include="pages\page2\page2.html" />
+    <Content Include="pages\page2\page2.js" />
     <None Include="App2_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
