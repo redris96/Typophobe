@@ -79,6 +79,8 @@ function x(event) {
 }
 
 function reset() {
+    var msg = new Windows.UI.Popups.MessageDialog("Your WPM is:"+" and your accuracy is: ");
+    msg.showAsync();
     i = 0;
     flag = 1;
     gc = 0;
