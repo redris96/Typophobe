@@ -8,7 +8,7 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
             // TODO: Initialize the page here.
-            document.getElementById("dis").innerHTML = legit;//'<span style="background-color: #fcf700">' + legit + '</span>';
+            document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
         },
 
         unload: function () {
@@ -32,6 +32,8 @@
 }*/
 var legit = 'Out believe has request not how comfort evident. Up delight cousins we feeling minutes. Genius has looked end piqued spring. Down has rose feel find man. Learning day desirous informed expenses material returned six the. She enabled invited exposed him another. Reasonably conviction solicitude me mr at discretion reasonable. Age out full gate bed day lose.';
 var i = 0;
+var tp = 0;
+while (legit[tp] != " ") tp++;
 var flag = 1;
 var whole;
 var gc = 0;
@@ -67,7 +69,7 @@ function x(event) {
             //Highlight the next word
             var v = i;
             while (legit[v] != " ") v++;
-            document.getElementById("dis").innerHTML = legit.substr(0, i) + '<span style="background-color: #fcf700">' + legit.substr(i,v-i) + "</span>"+legit.substr(v);
+            document.getElementById("dis").innerHTML = legit.substr(0, i) + '<span style="background-color: #9c8c8c">' + legit.substr(i, v - i) + "</span>" + legit.substr(v);
             flag = 1;
         }
     }
@@ -81,7 +83,7 @@ function reset() {
     flag = 1;
     gc = 0;
     c, wc = 0; state = 0;
-    document.getElementById("dis").innerHTML = legit;//'<span style="background-color: #fcf700">' + legit + '</span>';
+    document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
     document.getElementById("wc").innerHTML = "Words: 0";
     document.getElementById("acc").innerHTML = "Accuracy: 0%";
     clearInterval(ticker);
