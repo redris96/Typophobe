@@ -13,17 +13,17 @@
     <div class="Test fragment">
         <header class="page-header" aria-label="Header content" role="banner">
             <button class="back-button" data-win-control="WinJS.UI.BackButton" onclick="reset()"></button>
-          <!--  <h1 class="titlearea win-type-ellipsis">
-                <span class="pagetitle">Welcome to Test</span>
-            </h1>-->
+           <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Test Your Speed</span>
+            </h1>
         </header>
         <section class="page-section" aria-label="Main content" role="main">
             <center>
-                <h1 style="margin:100px">Test Your Speed</h1>
-                    <p id="dis"><span style="background-color: #3c413c">The quick brown fox jumped over the lazy dog.</span></p>
-                    <input type="text" id="typeit" onkeyup="x(event)" autofocus/> <br /><br/>
-                    <h3 id="acc">Accuracy: 0%</h3><br/>
-                    <h3 id="wc">Words: 0</h3> <br/>
+                    <p id="dis"><span style="background-color: #3c413c">lol</span></p>
+                    <input type="text" id="typeit" onkeyup="x(event)" autofocus onkeydown="startTimer(60)"/> <br /><br/>
+                    <h3 id="acc">Accuracy: 0%</h3>
+                    <h3 id="wc">WPM: 0</h3> 
+                    <h3 id="countdown">Countdown: 60</h3> <br />
                     <button id="but" onclick="reset()">Reset</button>
             </center>
             <div data-win-control="WinJS.UI.ToggleSwitch" id="toggle1" style="position: absolute; right: 0; bottom: 0;" data-win-options="{onchange : togglefunc}"><p>8-Bit Music</p></div>

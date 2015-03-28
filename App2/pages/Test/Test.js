@@ -8,6 +8,7 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
             // TODO: Initialize the page here.
+            document.getElementById("dis").innerHTML = '<span style="background-color: #3c413c">' + legit + '</span>';
         },
 
         unload: function () {
@@ -29,7 +30,7 @@
         music.pause;
     }
 }*/
-var legit = "The quick brown fox jumped over the lazy dog.";
+var legit = 'Out believe has request not how comfort evident. Up delight cousins we feeling minutes. Genius has looked end piqued spring. Down has rose feel find man. Learning day desirous informed expenses material returned six the. She enabled invited exposed him another. Reasonably conviction solicitude me mr at discretion reasonable. Age out full gate bed day lose.';
 var i = 0;
 var flag = 1;
 var whole;
@@ -61,7 +62,7 @@ function x(event) {
                 i++;
             i++;
             wc++;
-            document.getElementById("wc").innerHTML = "Words: " + wc;
+            document.getElementById("wc").innerHTML = "WPM: " + parseInt(wc/(60-timeInSecs)*60);
             document.getElementById("acc").innerHTML = "Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%";
             //Highlight the next word
             document.getElementById("dis").innerHTML = legit.substr(0, i) + '<span style="background-color: #3c413c">' + legit.substr(i) + "</span>";
@@ -77,8 +78,35 @@ function reset() {
     i = 0;
     flag = 1;
     gc = 0;
-    c, wc = 0;
+    c, wc = 0; state = 0;
     document.getElementById("dis").innerHTML = '<span style="background-color: #3c413c">' + legit + '</span>';
     document.getElementById("wc").innerHTML = "Words: 0";
     document.getElementById("acc").innerHTML = "Accuracy: 0%";
+    clearInterval(ticker);
+    document.getElementById("countdown").innerHTML = "Countdown: 60";
+}
+
+var timeInSecs;
+var ticker;
+var state=0;
+
+function startTimer(secs) {
+    if (state == 0) {
+        timeInSecs = parseInt(secs) - 1;
+        ticker = setInterval("tick()", 1000);   // every second
+        state = 1;
+    }
+}
+
+function tick() {
+    var secs = timeInSecs;
+    if (secs > 0) {
+        timeInSecs--;
+    }
+    else {
+        clearInterval(ticker); // stop counting at zero
+        // startTimer(60);  // remove forward slashes in front of startTimer to repeat if required
+    }
+
+    document.getElementById("countdown").innerHTML = "Countdown: " + secs;
 }
