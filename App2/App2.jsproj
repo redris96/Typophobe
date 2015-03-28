@@ -78,10 +78,16 @@
     <Content Include="pages\About\About.css" />
     <Content Include="pages\About\About.html" />
     <Content Include="pages\About\About.js" />
+    <Content Include="pages\High Scores\High Scores.css" />
+    <Content Include="pages\High Scores\High Scores.html" />
+    <Content Include="pages\High Scores\High Scores.js" />
     <Content Include="pages\home\home.css" />
     <Content Include="pages\home\home.html" />
     <Content Include="pages\home\home.js" />
     <Content Include="default.html" />
+    <Content Include="pages\Modes\Modes.css" />
+    <Content Include="pages\Modes\Modes.html" />
+    <Content Include="pages\Modes\Modes.js" />
     <Content Include="pages\Settings\Settings.css" />
     <Content Include="pages\Settings\Settings.html" />
     <Content Include="pages\Settings\Settings.js" />
