@@ -101,7 +101,7 @@ function reset() {
     msg.showAsync();*/
     document.getElementById("typeit").value = "";
     i = 0;
-    flag = 1;
+    flag = 1; wh = 94;
     gc = 0; pr = 0;
     c, wc = 0; state = 0; up();
     document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
@@ -150,7 +150,9 @@ function dis() {
 }
 
 function doScroll() {
-    $('#dis').scrollTop($('#dis').scrollTop() + 53);
+    //$('#dis').scrollTop($('#dis').scrollTop() + 53);
+    var lol = $("#dis").scrollTop();
+    $("#dis").animate({ scrollTop: lol+53}, "slow");
 }
 
 function up(){
