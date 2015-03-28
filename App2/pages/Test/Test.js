@@ -8,6 +8,7 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
             // TODO: Initialize the page here.
+            
             document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substring(tp);
         },
 
@@ -33,7 +34,8 @@ function toggleMusic() {
     }
 
 }
-var legit = 'Out believe has request not how comfort evident. Up delight cousins we feeling minutes. Genius has looked end piqued spring. Down has rose feel find man. Learning day desirous informed expenses material returned six the. She enabled invited exposed him another. Reasonably conviction solicitude me mr at discretion reasonable. Age out full gate bed day lose.';
+var para = localStorage.getItem("default");
+var legit = para;
 var i = 0;
 var tp = 0;
 while (legit[tp] != " ") tp++;
