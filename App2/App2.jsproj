@@ -62,13 +62,19 @@
     <Content Include="images\storelogo.scale-100.png" />
     <Content Include="js\default.js" />
     <Content Include="js\navigator.js" />
+    <Content Include="pages\About\About.css" />
+    <Content Include="pages\About\About.html" />
+    <Content Include="pages\About\About.js" />
     <Content Include="pages\home\home.css" />
     <Content Include="pages\home\home.html" />
     <Content Include="pages\home\home.js" />
     <Content Include="default.html" />
-    <Content Include="pages\page2\page2.css" />
-    <Content Include="pages\page2\page2.html" />
-    <Content Include="pages\page2\page2.js" />
+    <Content Include="pages\Settings\Settings.css" />
+    <Content Include="pages\Settings\Settings.html" />
+    <Content Include="pages\Settings\Settings.js" />
+    <Content Include="pages\Test\Test.css" />
+    <Content Include="pages\Test\Test.html" />
+    <Content Include="pages\Test\Test.js" />
     <None Include="App2_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
