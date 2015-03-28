@@ -128,6 +128,7 @@ function tick() {
         clearInterval(ticker);
         dis();
         var msg = new Windows.UI.Popups.MessageDialog("");
+        msg.title="WPM: " + wc + "Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%"
         /*msg.commands.append(new Windows.UI.Popups.UICommand(
                 "Try again",));
         msg.commands.append(
