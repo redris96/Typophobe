@@ -22,14 +22,17 @@
         }
     });
 })();
-/*function togglefunc() {
-    var toggle = document.getElementById("toggle1");
-    if (toggle.checked == checked) {
-        music.play;
+function toggleMusic() {
+    
+    if (document.getElementById("musicButton").innerText == "Music: ON") {
+        document.getElementById("music").pause();
+        document.getElementById("musicButton").innerHTML = "Music: OFF";
     } else {
-        music.pause;
+        document.getElementById("music").play();
+        document.getElementById("musicButton").innerHTML = "Music: ON";
     }
-}*/
+
+}
 var legit = 'Out believe has request not how comfort evident. Up delight cousins we feeling minutes. Genius has looked end piqued spring. Down has rose feel find man. Learning day desirous informed expenses material returned six the. She enabled invited exposed him another. Reasonably conviction solicitude me mr at discretion reasonable. Age out full gate bed day lose.';
 var i = 0;
 var tp = 0;
