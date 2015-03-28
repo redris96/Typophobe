@@ -79,12 +79,12 @@ function x(event) {
 }
 
 function reset() {
-    var msg = new Windows.UI.Popups.MessageDialog("WPM: " + wc + "\nAccuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%");
-    /*msg.commands.append(new Windows.UI.Popups.UICommand(
+    /*var msg = new Windows.UI.Popups.MessageDialog("WPM: " + wc + "\nAccuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%");
+    msg.commands.append(new Windows.UI.Popups.UICommand(
             "Try again",));
     msg.commands.append(
-        new Windows.UI.Popups.UICommand("Back", commandInvokedHandler));*/
-    msg.showAsync();
+        new Windows.UI.Popups.UICommand("Back", commandInvokedHandler));
+    msg.showAsync();*/
     document.getElementById("typeit").value = "";
     i = 0;
     flag = 1;
@@ -119,7 +119,12 @@ function tick() {
     else {
         clearInterval(ticker);
         dis();
-        reset();
+        var msg = new Windows.UI.Popups.MessageDialog("WPM: " + wc + "\nAccuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%");
+        /*msg.commands.append(new Windows.UI.Popups.UICommand(
+                "Try again",));
+        msg.commands.append(
+            new Windows.UI.Popups.UICommand("Back", commandInvokedHandler));*/
+        msg.showAsync();
     }
     
     document.getElementById("countdown").innerHTML = "Countdown: " + secs;
