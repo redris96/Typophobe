@@ -53,5 +53,8 @@ function appendText() {
     localStorage.setItem("LIST", JSON.stringify(list1));
     localStorage.setItem("TOTAL", "3");
     console.log(localStorage.getItem("TOTAL"));
+    localStorage.setItem("top1","0");
+    localStorage.setItem("top2","0");
+    localStorage.setItem("top3","0");
     localStorage.setItem("Music", "OFF");
 }

@@ -35,6 +35,7 @@
 })();
 function loadPara(x) {
     console.log(x);
+
 }
 function quickC() {
     var input = document.getElementById("QuickCustom").value;

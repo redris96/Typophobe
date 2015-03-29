@@ -141,19 +141,19 @@ function tick() {
         clearInterval(ticker);
         dis();
         var msg = new Windows.UI.Popups.MessageDialog("");
-        msg.title="WPM: " + wc + "         Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%"
-        /*msg.commands.append(new Windows.UI.Popups.UICommand(
-                "Try again",));
-        msg.commands.append(
-            new Windows.UI.Popups.UICommand("Back", commandInvokedHandler));*/
-        msg.showAsync();
+        
         var acc=(Number((gc / i) * 100).toPrecision(4));
-        var ch=acc*wc/100;
+        var ch = acc * wc / 100;
+        top1 = parseInt(localStorage.getItem("top1"));
+        top2 = parseInt(localStorage.getItem("top2"));
+        top3 = parseInt(localStorage.getItem("top3"));
+        var state = 0;
         if(ch>top1)
         {
             top3 = top2;
             top2 = top1;
-            top1=ch;
+            top1 = ch;
+            state = 1;
         }
         else if(ch>top2)
         {
@@ -164,6 +164,18 @@ function tick() {
         {
             top3 = ch;
         }
+        msg.title = "WPM: " + wc + " Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%"
+        if (state == 1) {
+            msg.title += " Highscore!";
+        }
+        /*msg.commands.append(new Windows.UI.Popups.UICommand(
+                "Try again",));
+        msg.commands.append(
+            new Windows.UI.Popups.UICommand("Back", commandInvokedHandler));*/
+        msg.showAsync();
+        localStorage.setItem("top1",top1+"");
+        localStorage.setItem("top2", "" + top2);
+        localStorage.setItem("top3","" + top3);
     }
     
     document.getElementById("countdown").innerHTML = "Countdown: " + secs;
