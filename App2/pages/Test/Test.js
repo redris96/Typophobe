@@ -39,8 +39,9 @@ function toggleMusic() {
     }
 
 }
-var para = localStorage.getItem("default");
-var legit = para;
+//var x = Math.floor((Math.random() * 4) + 1);
+//var para = localStorage.getItem("" + x);
+var legit = localStorage.getItem("default");
 var i = 0;
 var tp = 0;
 while (legit[tp] != " ") tp++;
