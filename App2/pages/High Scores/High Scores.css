@@ -36,8 +36,6 @@
        margin-top:1em;
 	 background-color: transparent;
 	 transition: background-color 0.2s linear 0s;
-	// border-style: solid;
-	// border-color: #151414;
     }
     .second{
         margin-top:1em;
@@ -45,8 +43,6 @@
        text-align:left;
 	 background-color: transparent;
 	 transition: background-color 0.2s linear 0s;
-	// border-style: solid;
-	// border-color: #151414;
     }
     .third{
         width: 2.4em;
@@ -54,8 +50,6 @@
        text-align:left;
 	 background-color: transparent;
 	 transition: background-color 0.2s linear 0s;
-	// border-style: solid;
-	// border-color: #151414;
     }
     .first:hover{
 	       background-color:#5F5F5F;
@@ -73,7 +67,3 @@
 	       border-color: #5F5F5F;
 	      }
 
-    #polo{
-     //   text-align:right;
-    }
-   
