@@ -7,20 +7,6 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
-            // TODO: Initialize the page here.
-            var list = JSON.parse(localStorage.getItem("LIST"));
-            var totalstr = localStorage.getItem("TOTAL");
-            var total = parseInt(totalstr);
-            var i;
-            var test = "";
-            for (i = 0; i < total; i++) {
-                var btn = document.createElement("Button");
-                btn.innerText = list[i];
-                btn.setAttribute("onclick","loadPara(\"" + list[i] + "\")");
-                document.getElementById("LIST").appendChild(btn);
-            }
-            console.log(document.getElementById("LIST").innerHTML);
-            
         },
 
         unload: function () {
