@@ -40,7 +40,7 @@ var i = 0;
 var tp = 0;
 while (legit[tp] != " ") tp++;
 var flag = 1;
-var whole;
+var wh=94;
 var gc = 0;
 var c, wc = 0, pr = 0;
 var u = legit.length;
@@ -65,13 +65,19 @@ function x(event) {
                 fl = 1;
             if (fl == 1)
                 c = 0;
-            gc += c + 1;
+            gc += c;
             while (legit[i] != " " && i < legit.length)
                 i++;
             i++;
             wc++;
             document.getElementById("wc").innerHTML = "WPM: " + parseInt(wc/(60-timeInSecs)*60);
-            document.getElementById("acc").innerHTML = "Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%";
+            document.getElementById("acc").innerHTML = "Accuracy: " + (Number((gc / (i-wc)) * 100).toPrecision(4)).toString() + "%";
+            //scroll
+            if (i>wh)
+            {
+                doScroll();
+                wh += 47;
+            }
             //Highlight the next word
             var v = i;
             while (legit[v] != " ") v++;
@@ -97,9 +103,9 @@ function reset() {
     msg.showAsync();*/
     document.getElementById("typeit").value = "";
     i = 0;
-    flag = 1;
+    flag = 1; wh = 94;
     gc = 0; pr = 0;
-    c, wc = 0; state = 0;
+    c, wc = 0; state = 0; up();
     document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
     document.getElementById("wc").innerHTML = "Words: 0";
     document.getElementById("acc").innerHTML = "Accuracy: 0%";
@@ -146,5 +152,16 @@ function dis() {
 }
 
 function doScroll() {
+<<<<<<< HEAD
     $('#dis').scrollTop($('#dis').scrollTop() + 10);
 }
+=======
+    //$('#dis').scrollTop($('#dis').scrollTop() + 53);
+    var lol = $("#dis").scrollTop();
+    $("#dis").animate({ scrollTop: lol+53}, "slow");
+}
+
+function up(){
+    $("#dis").animate({ scrollTop: 0 }, "fast");
+}
+>>>>>>> 6831a9ede37c3a86eac0c1e5424f34364fadae03

@@ -8,9 +8,6 @@
             // TODO: Initialize the page here.
             WinJS.Utilities.query("a").listen("click", 
                 this.linkClickEventHandler, false);
-            var temp = localStorage.getItem("default");
-            console.log(temp);
-            var msg = Windows.UI.Popups.MessageDialog("YOlo");
         },
         linkClickEventHandler: function (eventInfo) {
         eventInfo.preventDefault();

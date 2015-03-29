@@ -8,6 +8,7 @@
     var nav = WinJS.Navigation;
     var sched = WinJS.Utilities.Scheduler;
     var ui = WinJS.UI;
+    appendText();
     localStorage.setItem("default", "Out believe has request not how comfort evident. Up delight cousins we feeling minutes. Genius has looked end piqued spring. Down has rose feel find man. Learning day desirous informed expenses material returned six the. She enabled invited exposed him another. Reasonably conviction solicitude me mr at discretion reasonable. Age out full gate bed day lose.");
     app.addEventListener("activated", function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
@@ -46,3 +47,10 @@
 
     app.start();
 })();
+function appendText() {
+    var list1 = JSON.parse(localStorage.getItem("LIST")) || [];
+    list1.push("CPP"); list1.push("Python"); list1.push("HTML");
+    localStorage.setItem("LIST", JSON.stringify(list1));
+    localStorage.setItem("TOTAL", "3");
+    console.log(localStorage.getItem("TOTAL"));
+}

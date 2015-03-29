@@ -78,9 +78,11 @@
     <Content Include="js\default.js" />
     <Content Include="js\jquery-2.1.3.js" />
     <Content Include="js\navigator.js" />
+    <Content Include="pages\About\Background.jpg" />
     <Content Include="pages\About\About.css" />
     <Content Include="pages\About\About.html" />
     <Content Include="pages\About\About.js" />
+    <Content Include="pages\About\tp.png" />
     <Content Include="pages\High Scores\High Scores.css" />
     <Content Include="pages\High Scores\High Scores.html" />
     <Content Include="pages\High Scores\High Scores.js" />
@@ -88,6 +90,7 @@
     <Content Include="pages\home\home.html" />
     <Content Include="pages\home\home.js" />
     <Content Include="default.html" />
+    <Content Include="pages\home\tp.png" />
     <Content Include="pages\Modes\Modes.css" />
     <Content Include="pages\Modes\Modes.html" />
     <Content Include="pages\Modes\Modes.js" />

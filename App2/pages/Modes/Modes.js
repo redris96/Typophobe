@@ -8,6 +8,18 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
             // TODO: Initialize the page here.
+            var list = JSON.parse(localStorage.getItem("LIST"));
+            var totalstr = localStorage.getItem("TOTAL");
+            var total = parseInt(totalstr);
+            var i;
+            var test = "";
+            for (i = 0; i < total; i++) {
+                var btn = document.createElement("BUTTON");
+                btn.innerText = list[i];
+                btn.onclick = "\"loadPara(\"" + list[i] + "\")\"";
+                document.getElementById("LIST").appendChild(btn);
+            }
+            
         },
 
         unload: function () {
@@ -21,3 +33,12 @@
         }
     });
 })();
+function loadPara(x) {
+    console.log(x);
+}
+function quickC() {
+    var input = document.getElementById("QuickCustom").value;
+    localStorage.setItem("default", input);
+    var msg = Windows.UI.Popups.MessageDialog("ADDED!");
+    msg.showAsync();
+}
