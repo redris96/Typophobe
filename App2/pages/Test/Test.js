@@ -173,7 +173,7 @@ function tick() {
         msg.commands.append(
             new Windows.UI.Popups.UICommand("Back", commandInvokedHandler));*/
         msg.showAsync();
-        localStorage.setItem("top1",top1+"");
+        localStorage.setItem("top1",""+top1);
         localStorage.setItem("top2", "" + top2);
         localStorage.setItem("top3","" + top3);
     }

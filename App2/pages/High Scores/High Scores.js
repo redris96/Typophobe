@@ -7,7 +7,6 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
-            // TODO: Initialize the page here.
         },
 
         unload: function () {
@@ -21,3 +20,6 @@
         }
     });
 })();
+function load() {
+    document.getElementById("high").innerHTML = "" + "1st "+localStorage.getItem("top1") +"<br>2nd "+ localStorage.getItem("top2") +"<br>3rd "+ localStorage.getItem("top3");
+}
