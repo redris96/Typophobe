@@ -112,7 +112,7 @@ function reset() {
     gc = 0; pr = 0;
     c, wc = 0; state = 0; up();
     document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
-    document.getElementById("wc").innerHTML = "Words: 0";
+    document.getElementById("wc").innerHTML = "WPM: 0";
     document.getElementById("acc").innerHTML = "Accuracy: 0%";
     clearInterval(ticker);
     document.getElementById("countdown").innerHTML = "Countdown: 60";
