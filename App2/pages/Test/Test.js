@@ -74,11 +74,13 @@ function x(event) {
             gc += c;
             while (legit[i] != " " && i < u)
                 i++;
-            i++;
+            i++; 
             wc++;
             document.getElementById("wc").innerHTML = "WPM: " + parseInt(wc/(60-timeInSecs)*60);
             document.getElementById("acc").innerHTML = "Accuracy: " + (Number((gc / (i-wc)) * 100).toPrecision(4)).toString() + "%";
             //scroll
+            if (i > u)
+                timeInSecs = 0; return;
             if (i>wh)
             {
                 doScroll();
