@@ -42,50 +42,70 @@
 	      }
 .nav-big h2{
 	    color: #fff;
-	    font-family: 'Merienda One', sans-serif;
+	   // font-family: Verdana, sans-serif;
 	    padding-top: 17px;
-	    font-size: 2em;
+	    font-size: 2.6em;
         padding-left: 0.2em;
 	   }
 
 .Tit{
     float:left;
+    height: 13em;
+    width: 27em;
+    padding-top: 4em;
     text-align: center;
     overflow: hidden;
+    //font-size: 2em;
    // border-bottom-left-radius: 12px;
-    margin-right: 20em;
+    margin-right: 1em;
    }
-
+.Mod{
+    float:left;
+    height: 13em;
+    width: 27em;
+    //font-size: 2em;
+    padding-top: 4em;
+   // margin-top: 4em;
+    text-align: center;
+    overflow: hidden;
+    margin-left: 0em;
+    margin-right: 10em;
+   }
 .Sett{
     float:left;
     text-align: center;
+    width:14em;
+    height:8em;
     overflow: hidden;
+    margin-top: 1em;
    /*border-bottom-left-radius:2em; */
-   margin-left: 3.5em;
-   margin-right: 9em;
+   margin-left: 0em;
+   margin-right: 0em;
+    padding-top: 2em;
    }
 
 .abo{
     float:left;
-    margin-top: 4em;
+    margin-top: 1em;
+    width:13em;
+    height:8em;
     text-align: center;
     overflow: hidden;
-    margin-left: 18.5em;
+    margin-left: 0em;
+    margin-right: 1em;
+    padding-top: 2em;
    }
 .weed{
     float:left;
-   // margin-top: 4em;
+    margin-top: 1em;
+    width: 27em;
+    height:8em;
     text-align: center;
     overflow: hidden;
-    margin-left: 8.5em;
+    margin-left: 0em;
+    padding-top: 2em;
    }
-.Mod{
-    float:left;
-   // margin-top: 4em;
-    text-align: center;
-    overflow: hidden;
-    margin-left: 13.5em;
-   }
+
 
 a{
   text-decoration: none;
