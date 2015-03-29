@@ -93,6 +93,9 @@ function x(event) {
             else
                 document.getElementById("dis").innerHTML = legit.substring(0,pr) + '<span style="color: #00ff21">' + legit.substr(pr, i - pr) + "</span>" + '<span style="background-color: #9c8c8c">' + legit.substr(i, v - i) + "</span>" + legit.substr(v);
             flag = 1; pr = i;
+            if (i > u)
+                timeInSecs = 0;
+
         }
     }
     else {
