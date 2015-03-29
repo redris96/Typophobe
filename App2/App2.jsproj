@@ -78,6 +78,7 @@
     <Content Include="js\default.js" />
     <Content Include="js\jquery-2.1.3.js" />
     <Content Include="js\navigator.js" />
+    <Content Include="js\script.js" />
     <Content Include="pages\About\Background.jpg" />
     <Content Include="pages\About\About.css" />
     <Content Include="pages\About\About.html" />

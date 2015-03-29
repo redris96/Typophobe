@@ -111,6 +111,10 @@ function reset() {
     flag = 1; wh = 94;
     gc = 0; pr = 0;
     c, wc = 0; state = 0; up();
+    var x=Math.floor((Math.random() * 4) + 1);
+    legit = localStorage.getItem("" + x);
+    tp = 0;
+    while (legit[tp] != " ") tp++;
     document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
     document.getElementById("wc").innerHTML = "WPM: 0";
     document.getElementById("acc").innerHTML = "Accuracy: 0%";
@@ -118,6 +122,7 @@ function reset() {
     document.getElementById("countdown").innerHTML = "Countdown: 60";
     document.getElementById("typeit").focus();
     document.getElementById("typeit").disabled = false;
+    
 }
 
 var timeInSecs;
