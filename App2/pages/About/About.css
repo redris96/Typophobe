@@ -30,3 +30,24 @@
 		-ms-grid-row: 2;
 		height: 100%;
 	}
+
+    
+.yolo{
+	 
+	   min-height:100%;
+	   background: url("Background.jpg");
+	   background-size: 1800px 900px;
+	   background-repeat: no-repeat;
+	   background-attachment: fixed;
+	   min-height:100%;
+	   margin-bottom: 0em;
+       padding-bottom: 3em;
+	  }
+.yolo img-about{
+        margin-left: 12em;
+       // margin-top: 7em;
+}
+.yolo Title{
+   // margin-top:0em;
+   // text-align: center;
+}
