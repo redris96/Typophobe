@@ -152,10 +152,6 @@ function dis() {
 }
 
 function doScroll() {
-<<<<<<< HEAD
-    $('#dis').scrollTop($('#dis').scrollTop() + 10);
-}
-=======
     //$('#dis').scrollTop($('#dis').scrollTop() + 53);
     var lol = $("#dis").scrollTop();
     $("#dis").animate({ scrollTop: lol+53}, "slow");
@@ -170,4 +166,4 @@ function load() {
         legit=data;
         reset();
     });
-}>>>>>>> 6831a9ede37c3a86eac0c1e5424f34364fadae03
+}
