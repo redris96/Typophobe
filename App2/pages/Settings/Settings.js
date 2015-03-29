@@ -34,3 +34,9 @@ function musicchange() {
     }
         
 }
+function resetdef() {
+    localStorage.setItem("top1","0");
+    localStorage.setItem("top2","0");
+    localStorage.setItem("top3","0");
+    localStorage.setItem("Music", "OFF");
+}
