@@ -80,7 +80,7 @@ function x(event) {
             document.getElementById("acc").innerHTML = "Accuracy: " + (Number((gc / (i-wc)) * 100).toPrecision(4)).toString() + "%";
             //scroll
             if (i > u)
-                timeInSecs = 0; return;
+            { timeInSecs = 0; return; }
             if (i>wh)
             {
                 doScroll();
@@ -111,6 +111,7 @@ function load() {
     gc = 0; pr = 0;
     c, wc = 0; state = 0; up();
     legit = localStorage.getItem("default");
+    u = legit.length;
     tp = 0;
     while (legit[tp] != " ") tp++;
     document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
@@ -131,6 +132,7 @@ function randomize() {
     var x = Math.floor((Math.random() * 4) + 1);
     localStorage.setItem("default", localStorage.getItem("" + x));
     legit = localStorage.getItem("default");
+    u = legit.length;
     tp = 0;
     while (legit[tp] != " ") tp++;
     document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
