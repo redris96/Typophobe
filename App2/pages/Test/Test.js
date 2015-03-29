@@ -164,4 +164,10 @@ function doScroll() {
 function up(){
     $("#dis").animate({ scrollTop: 0 }, "fast");
 }
->>>>>>> 6831a9ede37c3a86eac0c1e5424f34364fadae03
+
+function load() {
+    jQuery.get('/pages/Text/c/c1.txt', function(data) {
+        legit=data;
+        reset();
+    });
+}>>>>>>> 6831a9ede37c3a86eac0c1e5424f34364fadae03
