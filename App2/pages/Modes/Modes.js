@@ -34,8 +34,7 @@
     });
 })();
 function loadPara(x) {
-    console.log(x);
-
+    localStorage.setItem("default",localStorage.getItem("html"));
 }
 function quickC() {
     var input = document.getElementById("QuickCustom").value;
