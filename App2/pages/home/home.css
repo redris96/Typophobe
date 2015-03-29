@@ -1,3 +1,78 @@
 ﻿.homepage section[role=main] {
     margin: auto 120px;
 }
+
+/*#swag{
+        position: center;
+	    text-align: center;
+	    background-color: #4800ff;
+	    height: 1.6em;
+       padding-right: 2em;
+       padding-left: 3em;
+	    //box-shadow: 10px 10px 15px #888888;
+}
+    
+#yolo{
+           padding-top: 0.2em;
+		  padding-left: 7em;
+		  padding-right: 1em;
+		  font-family: Verdana, sans-serif;
+          color: #ffffff;
+
+} */
+.nav-bar{
+	 margin-left: 10em;
+	 margin-top: 6em;
+	}
+
+.nav-big{
+	 width: 16em;
+	 background-color: #000;
+	 transition: background-color 0.2s linear 0s;
+	 border-style: solid;
+	 border-color: #151414;
+	 height: 10em;
+	 
+	}
+
+.nav-big:hover{
+	       background-color:#5F5F5F;
+	       color: #fff;
+	       border-color: #5F5F5F;
+	      }
+.nav-big h2{
+	    color: #fff;
+	    font-family: 'Merienda One', sans-serif;
+	    padding-top: 17px;
+	    font-size: 2em;
+        padding-left: 0.2em;
+	   }
+
+.Tit{
+    float:left;
+    text-align: center;
+    overflow: hidden;
+    border-bottom-left-radius: 12px;
+    margin-right: 20em;
+   }
+
+.Sett{
+    float:left;
+    text-align: center;
+    overflow: hidden;
+   /*border-bottom-left-radius:2em; */
+   margin-left: 5.5em;
+   }
+
+.abo{
+    float:left;
+    margin-top: 3em;
+    text-align: center;
+    overflow: hidden;
+    margin-left: 9.5em;
+   }
+
+a{
+  text-decoration: none;
+  color: #767683;
+ }
