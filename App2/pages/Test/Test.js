@@ -147,6 +147,23 @@ function tick() {
         msg.commands.append(
             new Windows.UI.Popups.UICommand("Back", commandInvokedHandler));*/
         msg.showAsync();
+        var acc=(Number((gc / i) * 100).toPrecision(4));
+        var ch=acc*wc/100;
+        if(ch>top1)
+        {
+            top3 = top2;
+            top2 = top1;
+            top1=ch;
+        }
+        else if(ch>top2)
+        {
+            top3=top2;
+            top2=ch;
+        }
+        else if(ch>top3)
+        {
+            top3 = ch;
+        }
     }
     
     document.getElementById("countdown").innerHTML = "Countdown: " + secs;
