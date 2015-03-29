@@ -1,38 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:build="http://schemas.microsoft.com/developer/appx/2012/build" IgnorableNamespaces="build">
-
   <Identity Name="f7c45bbb-19d9-47f8-9ae7-62daaf110af2" Version="1.0.0.0" Publisher="CN=Rishith Reddy" />
-
   <Properties>
     <DisplayName>App2</DisplayName>
     <PublisherDisplayName>Rishith Reddy</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
-
   <Prerequisites>
     <OSMinVersion>6.3.0</OSMinVersion>
     <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
   </Prerequisites>
-
   <Resources>
     <Resource Language="x-generate" />
   </Resources>
-
   <Applications>
     <Application Id="App" StartPage="default.html">
-
       <m2:VisualElements DisplayName="App2" Description="App2" ForegroundText="light" BackgroundColor="#464646" Square150x150Logo="images\Logo.png" Square30x30Logo="images\SmallLogo.png">
-
+        <m2:DefaultTile Square70x70Logo="images\Square70x70Logo.png" DefaultSize="square150x150Logo" ShortName="Logomania" Square310x310Logo="images\Square310x310Logo.png" Wide310x150Logo="images\Wide310x150Logo.png">
+        </m2:DefaultTile>
         <m2:SplashScreen Image="images\splashscreen.png" />
-
       </m2:VisualElements>
     </Application>
   </Applications>
-
   <Capabilities>
     <Capability Name="internetClient" />
   </Capabilities>
-
   <build:Metadata>
     <build:Item Name="Blend" Version="12.0.51020.0" />
   </build:Metadata>
