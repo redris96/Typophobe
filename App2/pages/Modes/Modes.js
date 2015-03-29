@@ -37,10 +37,12 @@
 function loadPara(x) {
     localStorage.setItem("default", localStorage.getItem(x));
     console.log(localStorage.getItem("default"));
+    var msg = Windows.UI.Popups.MessageDialog("Mode Applied!, Please press Reset Button in Test Page");
+    msg.showAsync();
 }
 function quickC() {
     var input = document.getElementById("QuickCustom").value;
     localStorage.setItem("default", input);
-    var msg = Windows.UI.Popups.MessageDialog("ADDED!");
+    var msg = Windows.UI.Popups.MessageDialog("Mode Applied!, Please press Reset Button in Test Page");
     msg.showAsync();
 }
