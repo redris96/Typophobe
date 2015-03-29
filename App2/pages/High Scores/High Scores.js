@@ -21,5 +21,5 @@
     });
 })();
 function load() {
-    document.getElementById("high").innerHTML = "" + "1st "+localStorage.getItem("top1") +"<br>2nd "+ localStorage.getItem("top2") +"<br>3rd "+ localStorage.getItem("top3");
+    document.getElementById("high").innerHTML = "" + "<div class="first" > 1st </div> "+localStorage.getItem("top1") +"<div class="second" ><br>2nd </div> "+ localStorage.getItem("top2") +"<div class="third" ><br>3rd </div> "+ localStorage.getItem("top3");
 }
