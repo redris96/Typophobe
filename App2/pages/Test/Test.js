@@ -98,7 +98,26 @@ function x(event) {
         flag = 0;
     }
 }
+function randomize() {
+    document.getElementById("typeit").value = "";
+    i = 0;
+    flag = 1; wh = 94;
+    gc = 0; pr = 0;
+    c, wc = 0; state = 0; up();
+    var x = Math.floor((Math.random() * 4) + 1);
+    localStorage.setItem("default", localStorage.getItem("" + x));
+    legit = localStorage.getItem("default");
+    tp = 0;
+    while (legit[tp] != " ") tp++;
+    document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
+    document.getElementById("wc").innerHTML = "WPM: 0";
+    document.getElementById("acc").innerHTML = "Accuracy: 0%";
+    clearInterval(ticker);
+    document.getElementById("countdown").innerHTML = "Countdown: 60";
+    document.getElementById("typeit").focus();
+    document.getElementById("typeit").disabled = false;
 
+}
 function reset() {
     /*var msg = new Windows.UI.Popups.MessageDialog("WPM: " + wc + "\nAccuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%");
     msg.commands.append(new Windows.UI.Popups.UICommand(
@@ -111,11 +130,6 @@ function reset() {
     flag = 1; wh = 94;
     gc = 0; pr = 0;
     c, wc = 0; state = 0; up();
-    var x=Math.floor((Math.random() * 4) + 1);
-    localStorage.setItem("default",localStorage.getItem("" + x));
-    legit = localStorage.getItem("default");
-    tp = 0;
-    while (legit[tp] != " ") tp++;
     document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
     document.getElementById("wc").innerHTML = "WPM: 0";
     document.getElementById("acc").innerHTML = "Accuracy: 0%";
