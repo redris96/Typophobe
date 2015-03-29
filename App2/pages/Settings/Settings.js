@@ -8,6 +8,11 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
             // TODO: Initialize the page here.
+            if (localStorage.getItem("Music") == "ON") {
+                document.getElementById("musiccheck").checked =true;
+            }else{
+                document.getElementById("musiccheck").checked = false;
+            }
         },
 
         unload: function () {
@@ -21,3 +26,11 @@
         }
     });
 })();
+function musicchange() {
+    if(document.getElementById("musiccheck").checked ==false){
+        localStorage.setItem("Music","OFF");
+    }else{
+        localStorage.setItem('Music', 'ON');
+    }
+        
+}
