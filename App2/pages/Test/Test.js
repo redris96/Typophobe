@@ -41,6 +41,7 @@ function toggleMusic() {
 }
 //var x = Math.floor((Math.random() * 4) + 1);
 //var para = localStorage.getItem("" + x);
+var x;
 var legit = localStorage.getItem("default");
 var i = 0;
 var tp = 0;
@@ -129,7 +130,9 @@ function randomize() {
     flag = 1; wh = 94;
     gc = 0; pr = 0;
     c, wc = 0; state = 0; up();
-    var x = Math.floor((Math.random() * 4) + 1);
+    var temp = x;
+    while(temp==x)
+        x = Math.floor((Math.random() * 4) + 1);
     localStorage.setItem("default", localStorage.getItem("" + x));
     legit = localStorage.getItem("default");
     u = legit.length;
