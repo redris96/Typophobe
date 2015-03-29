@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Settings</title>
+
+    <link href="Settings.css" rel="stylesheet" />
+    <script src="Settings.js"></script>
+</head>
+<body>
+    <div class="Settings fragment">
+        <header class="page-header" aria-label="Header content" role="banner">
+            <button class="back-button" data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Welcome to Settings</span>
+            </h1>
+        </header>
+        <section class="page-section" aria-label="Main content" role="main">
+            <h2>Music Default State: <input onchange="musicchange()" id="musiccheck" type="checkbox" name="musictog" value="Music" /></h2>
+            <button onclick="resetdef()">Reset to Defaults</button>
+        </section>
+    </div>
+</body>
+</html>

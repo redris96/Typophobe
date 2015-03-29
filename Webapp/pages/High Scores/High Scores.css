@@ -1,0 +1,69 @@
+﻿.High_Scores section {
+	margin: auto 120px;
+}
+
+.phone .High_Scores .page-section {
+	margin: auto 24px;
+}
+
+.phone .High_Scores .page-header .titlearea {
+	-ms-grid-column: 1;
+	margin-top: 37px;
+	margin-left: 24px;
+	font-size: 28pt;
+	width: calc(100vw - 20px);
+}
+
+.phone .High_Scores .back-button {
+	display: none;
+}
+
+.fragment {
+	-ms-grid-columns: 1fr;
+	-ms-grid-rows: 128px 1fr;
+	display: -ms-grid;
+	height: 100%;
+	width: 100%;
+}
+
+	.fragment section[role=main] {
+		-ms-grid-row: 2;
+		height: 100%;
+	}
+     .first{
+        width: 2.4em;
+       text-align:left;
+       margin-top:1em;
+	 background-color: transparent;
+	 transition: background-color 0.2s linear 0s;
+    }
+    .second{
+        margin-top:1em;
+        width: 2.4em;
+       text-align:left;
+	 background-color: transparent;
+	 transition: background-color 0.2s linear 0s;
+    }
+    .third{
+        width: 2.4em;
+        margin-top:1em;
+       text-align:left;
+	 background-color: transparent;
+	 transition: background-color 0.2s linear 0s;
+    }
+    .first:hover{
+	       background-color:#5F5F5F;
+	       color: #fff;
+	       border-color: #5F5F5F;
+	      }
+    .second:hover{
+	       background-color:#5F5F5F;
+	       color: #fff;
+	       border-color: #5F5F5F;
+	      }
+    .third:hover{
+	       background-color:#5F5F5F;
+	       color: #fff;
+	       border-color: #5F5F5F;
+	      }
+
