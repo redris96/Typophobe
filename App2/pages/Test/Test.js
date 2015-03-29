@@ -8,7 +8,12 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
             // TODO: Initialize the page here.
-            
+            var temp = localStorage.getItem("Music");
+            console.log(temp);
+            if (temp == "ON") {
+                console.log("yes");
+                toggleMusic();
+            }
             document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substring(tp);
         },
 
