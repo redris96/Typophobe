@@ -99,6 +99,21 @@ function x(event) {
     }
 }
 function load() {
+    document.getElementById("typeit").value = "";
+    i = 0;
+    flag = 1; wh = 94;
+    gc = 0; pr = 0;
+    c, wc = 0; state = 0; up();
+    legit = localStorage.getItem("default");
+    tp = 0;
+    while (legit[tp] != " ") tp++;
+    document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
+    document.getElementById("wc").innerHTML = "WPM: 0";
+    document.getElementById("acc").innerHTML = "Accuracy: 0%";
+    clearInterval(ticker);
+    document.getElementById("countdown").innerHTML = "Countdown: 60";
+    document.getElementById("typeit").focus();
+    document.getElementById("typeit").disabled = false;
 
 }
 function randomize() {
