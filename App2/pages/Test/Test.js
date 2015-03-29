@@ -98,6 +98,9 @@ function x(event) {
         flag = 0;
     }
 }
+function load() {
+
+}
 function randomize() {
     document.getElementById("typeit").value = "";
     i = 0;
