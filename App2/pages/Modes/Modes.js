@@ -14,11 +14,12 @@
             var i;
             var test = "";
             for (i = 0; i < total; i++) {
-                var btn = document.createElement("BUTTON");
+                var btn = document.createElement("Button");
                 btn.innerText = list[i];
-                btn.onclick = "\"loadPara(\"" + list[i] + "\")\"";
+                btn.setAttribute("onclick","loadPara(\"" + list[i] + "\")");
                 document.getElementById("LIST").appendChild(btn);
             }
+            console.log(document.getElementById("LIST").innerHTML);
             
         },
 
@@ -34,7 +35,8 @@
     });
 })();
 function loadPara(x) {
-    localStorage.setItem("default",localStorage.getItem("html"));
+    localStorage.setItem("default", localStorage.getItem("html"));
+    console.log(localStorage.getItem("default"));
 }
 function quickC() {
     var input = document.getElementById("QuickCustom").value;
