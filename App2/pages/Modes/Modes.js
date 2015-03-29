@@ -35,7 +35,7 @@
     });
 })();
 function loadPara(x) {
-    localStorage.setItem("default", localStorage.getItem("html"));
+    localStorage.setItem("default", localStorage.getItem(x));
     console.log(localStorage.getItem("default"));
 }
 function quickC() {
