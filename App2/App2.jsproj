@@ -100,13 +100,11 @@
     <Content Include="pages\Test\Test.css" />
     <Content Include="pages\Test\Test.html" />
     <Content Include="pages\Test\Test.js" />
+    <Content Include="pages\Text\c\c1.txt" />
     <None Include="App2_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.WinJS.2.0, Version=1.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="pages\Text\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment

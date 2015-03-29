@@ -71,7 +71,7 @@ function x(event) {
             if (fl == 1)
                 c = 0;
             gc += c;
-            while (legit[i] != " " && i < legit.length)
+            while (legit[i] != " " && i < u)
                 i++;
             i++;
             wc++;
@@ -85,7 +85,7 @@ function x(event) {
             }
             //Highlight the next word
             var v = i;
-            while (legit[v] != " ") v++;
+            while (legit[v] != " " && v < u ) v++;
             var temp = document.getElementById("dis").innerHTML;
             if (c == 0)
                 document.getElementById("dis").innerHTML = legit.substring(0,pr) + '<span style="color: #ff0000">' + legit.substr(pr, i - pr) + "</span>" + '<span style="background-color: #9c8c8c">' + legit.substr(i, v - i) + "</span>" + legit.substr(v);
@@ -166,9 +166,14 @@ function up(){
     $("#dis").animate({ scrollTop: 0 }, "fast");
 }
 
-function load() {
-    jQuery.get('/pages/Text/c/c1.txt', function(data) {
-        legit=data;
+/*function load() {
+    Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appx:///pages//pages/Text/c/c1.txt").done(
+    function (file) {
+        // Process file
+        legit = file.toString;
         reset();
-    });
-}
+    }
+);
+}*/
+
+
