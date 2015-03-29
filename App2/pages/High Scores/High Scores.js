@@ -21,5 +21,5 @@
     });
 })();
 function load() {
-    document.getElementById("high").innerHTML = "" + "<div class="first" > 1st </div> "+localStorage.getItem("top1") +"<div class="second" ><br>2nd </div> "+ localStorage.getItem("top2") +"<div class="third" ><br>3rd </div> "+ localStorage.getItem("top3");
+    document.getElementById("high").innerHTML = "" + "<div  class=\" first\" >1:" + "\t\t\t" + parseInt(localStorage.getItem("top1")) + "</div> <div  class=\" second\" >2: " + "\t\t\t" + parseInt(localStorage.getItem("top2")) + "</div> <div   class=\" third\" >3: " + "\t\t\t" + parseInt(localStorage.getItem("top3")) + "</div>";
 }
