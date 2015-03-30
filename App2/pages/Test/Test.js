@@ -43,7 +43,7 @@ function toggleMusic() {
 }
 //var x = Math.floor((Math.random() * 4) + 1);
 //var para = localStorage.getItem("" + x);
-var nx;
+var nx,was=0;
 var legit = localStorage.getItem("default");
 var i = 0;
 var tp = 0;
@@ -53,18 +53,6 @@ var wh=94;
 var gc = 0;
 var c, wc = 0, pr = 0;
 var u = legit.length;
-/*var res;
-for (k = 0,i=1; k < u; k++)
-{
-    if(legit[k]!=" ")
-    {
-        res = res + legit[k];
-    }
-    else
-    {
-        res = res + "</span> " + "<span id=" + "\"" + k + "\"" + ">";
-    }
-}*/
 function x(event) {
     var a = event.keyCode;
     if (a==32) {
@@ -129,7 +117,7 @@ function load() {
     i = 0;
     flag = 1; wh = 94;
     gc = 0; pr = 0;
-    c, wc = 0; state = 0; up();
+    wc = 0; state = 0; up();
     legit = localStorage.getItem("default");
     u = legit.length;
     tp = 0;
@@ -152,6 +140,15 @@ function randomize() {
     c, wc = 0; state = 0; up();
     var temp = nx;
     curr = localStorage.getItem("currentMode");
+    if (curr == "quickcustom") {
+        if (was == 0)
+            was = 1;
+        else {
+            curr = "defaultmode";
+            localStorage.setItem("currentMode", "defaultmode");
+            was = 0;
+        }
+    }
     var oh = parseInt(localStorage.getItem(curr));
     if (oh != 1) {
         while (temp == nx)
