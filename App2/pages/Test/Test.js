@@ -37,7 +37,7 @@ function toggleMusic() {
         document.getElementById("music").play();
         document.getElementById("musicButton").innerHTML = "Music: ON";
     }
-
+    document.getElementById("typeit").focus();
 }
 //var x = Math.floor((Math.random() * 4) + 1);
 //var para = localStorage.getItem("" + x);

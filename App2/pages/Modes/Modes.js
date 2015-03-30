@@ -28,7 +28,7 @@ function loadPara(x) {
 }
 function quickC() {
     var input = document.getElementById("QuickCustom").value;
-    localStorage.setItem("default", input);
-    var msg = Windows.UI.Popups.MessageDialog("Mode Applied! Please press Reset Button in Test Page");
+    localStorage.setItem("default", input.trim());
+    var msg = Windows.UI.Popups.MessageDialog("Mode Applied! Please press Reset Button iyolon Test Page");
     msg.showAsync();
 }
