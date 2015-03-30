@@ -72,6 +72,9 @@ function x(event) {
         var ret=change.split(" ");
         document.getElementById("typeit").value = ret[1];
         change = ret[0];
+        //change.replace(/</g, "&lt;");
+        //change.replace(/>/g, "&gt;");
+        //change.replace(/&/g, "&amp;");
         if (flag == 0) {
             var fl = 0;
             var li = i;
@@ -141,13 +144,14 @@ function load() {
 
 }
 function randomize() {
+    console.log("started randomize");
     document.getElementById("typeit").value = "";
     i = 0;
     flag = 1; wh = 94;
     gc = 0; pr = 0;
     c, wc = 0; state = 0; up();
     var temp = nx;
-    curr = parseInt(localStorage.getItem("currentmode"));
+    curr = localStorage.getItem("currentMode");
     var oh = parseInt(localStorage.getItem(curr));
     if (oh != 1) {
         while (temp == nx)
@@ -236,7 +240,7 @@ function tick() {
         {
             top3 = ch;
         }
-        msg.title = "WPM: " + document.getElementById("wc").innerHTML + " Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%"
+        msg.title = document.getElementById("wc").innerHTML + " Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%"
         if (state == 1) {
             msg.title += " Highscore!";
         }
