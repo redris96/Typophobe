@@ -53,11 +53,25 @@ var wh=94;
 var gc = 0;
 var c, wc = 0, pr = 0;
 var u = legit.length;
+/*var res;
+for (k = 0,i=1; k < u; k++)
+{
+    if(legit[k]!=" ")
+    {
+        res = res + legit[k];
+    }
+    else
+    {
+        res = res + "</span> " + "<span id=" + "\"" + k + "\"" + ">";
+    }
+}*/
 function x(event) {
     var a = event.keyCode;
     if (a==32) {
         var change = document.getElementById("typeit").value;
-        document.getElementById("typeit").value = "";
+        var ret=change.split(" ");
+        document.getElementById("typeit").value = ret[1];
+        change = ret[0];
         if (flag == 0) {
             var fl = 0;
             var li = i;
@@ -132,10 +146,14 @@ function randomize() {
     flag = 1; wh = 94;
     gc = 0; pr = 0;
     c, wc = 0; state = 0; up();
-    //var temp = nx;
+    var temp = nx;
     currentmode = localStorage.getItem("currentMode");
-    //while (temp == nx)
-    nx = Math.floor((Math.random() * localStorage.getItem(currentmode)) + 1); 
+    if (localStorage.getItem(currentmode) != 1) {
+        while (temp == nx)
+            nx = Math.floor((Math.random() * localStorage.getItem(currentmode)) + 1);
+    } else {
+        nx = Math.floor((Math.random() * localStorage.getItem(currentmode)) + 1);
+    }
     localStorage.setItem("default", localStorage.getItem(currentmode + nx));
     legit = localStorage.getItem("default");
     u = legit.length;
@@ -216,7 +234,7 @@ function tick() {
         {
             top3 = ch;
         }
-        msg.title = "WPM: " + wc + " Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%"
+        msg.title = "WPM: " + document.getElementById("wc").innerHTML + " Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%"
         if (state == 1) {
             msg.title += " Highscore!";
         }
