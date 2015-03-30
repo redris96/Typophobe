@@ -147,18 +147,20 @@ function randomize() {
     gc = 0; pr = 0;
     c, wc = 0; state = 0; up();
     var temp = nx;
-    currentmode = localStorage.getItem("currentMode");
-    if (localStorage.getItem(currentmode) != 1) {
+    curr = parseInt(localStorage.getItem("currentmode"));
+    var oh = parseInt(localStorage.getItem(curr));
+    if (oh != 1) {
         while (temp == nx)
-            nx = Math.floor((Math.random() * localStorage.getItem(currentmode)) + 1);
+            nx = Math.floor((Math.random() * oh) + 1);
     } else {
-        nx = Math.floor((Math.random() * localStorage.getItem(currentmode)) + 1);
+        nx = Math.floor((Math.random() * oh) + 1);
     }
-    localStorage.setItem("default", localStorage.getItem(currentmode + nx));
+    localStorage.setItem("default", localStorage.getItem(curr + nx.toString()));
     legit = localStorage.getItem("default");
     u = legit.length;
     tp = 0;
     while (legit[tp] != " ") tp++;
+    console.log('<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp));
     document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
     document.getElementById("wc").innerHTML = "WPM: 0";
     document.getElementById("acc").innerHTML = "Accuracy: 0%";
