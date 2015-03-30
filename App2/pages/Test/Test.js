@@ -7,6 +7,7 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
+            console.log(localStorage.getItem("currentMode" + "OH"));
             // TODO: Initialize the page here.
             var temp = localStorage.getItem("Music");
             console.log(temp);
@@ -141,6 +142,7 @@ function load() {
 
 }
 function randomize() {
+    console.log(localStorage.getItem("currentMode" + "OHOHOH"));
     document.getElementById("typeit").value = "";
     i = 0;
     flag = 1; wh = 94;
@@ -234,7 +236,7 @@ function tick() {
         {
             top3 = ch;
         }
-        msg.title = "WPM: " + document.getElementById("wc").innerHTML + " Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%"
+        msg.title = document.getElementById("wc").innerHTML + " Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%"
         if (state == 1) {
             msg.title += " Highscore!";
         }
