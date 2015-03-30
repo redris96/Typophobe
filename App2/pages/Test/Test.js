@@ -64,10 +64,10 @@ function x(event) {
         //change.replace(/>/g, "&gt;");
         //change.replace(/&/g, "&amp;");
         if (flag == 0) {
-            var fl = 0;
+            var fl = 0,cl=change.length;
             var li = i;
             c = 0;
-            for (j = 0; j < change.length && li < legit.length && legit[li] != " "; li++, j++) {
+            for (j = 0; j < cl && li < u && legit[li] != " "; li++, j++) {
                 if (change[j] == legit[li])
                     c++;
                 else {
@@ -75,14 +75,14 @@ function x(event) {
                     break;
                 }
             }
-            if (change.length > li - i+1)
+            while (legit[i] != " " && i < u)
+                i++;
+            i++;
+            if (cl != i-pr-1)
                 fl = 1;
             if (fl == 1)
                 c = 0;
             gc += c;
-            while (legit[i] != " " && i < u)
-                i++;
-            i++; 
             wc++;
             document.getElementById("wc").innerHTML = "WPM: " + parseInt(wc/(60-timeInSecs)*60);
             document.getElementById("acc").innerHTML = "Accuracy: " + (Number((gc / (i-wc)) * 100).toPrecision(4)).toString() + "%";
