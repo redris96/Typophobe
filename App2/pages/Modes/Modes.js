@@ -21,8 +21,7 @@
     });
 })();
 function loadPara(x) {
-    localStorage.setItem("default", localStorage.getItem(x));
-    console.log(localStorage.getItem("default"));
+    localStorage.setItem("currentMode",x);
     var msg = Windows.UI.Popups.MessageDialog("Mode Applied! Please press Reset Button in Test Page");
     msg.showAsync();
 }

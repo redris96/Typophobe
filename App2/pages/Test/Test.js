@@ -10,7 +10,7 @@
             // TODO: Initialize the page here.
             var temp = localStorage.getItem("Music");
             console.log(temp);
-            load();
+            randomize();
             if (temp == "ON") {
                 console.log("yes");
                 toggleMusic();
@@ -132,10 +132,11 @@ function randomize() {
     flag = 1; wh = 94;
     gc = 0; pr = 0;
     c, wc = 0; state = 0; up();
-    var temp = nx;
-    while (temp == nx)
-     nx = Math.floor((Math.random() * 4) + 1); 
-    localStorage.setItem("default", localStorage.getItem("" + nx));
+    //var temp = nx;
+    currentmode = localStorage.getItem("currentMode");
+    //while (temp == nx)
+    nx = Math.floor((Math.random() * localStorage.getItem(currentmode)) + 1); 
+    localStorage.setItem("default", localStorage.getItem(currentmode + nx));
     legit = localStorage.getItem("default");
     u = legit.length;
     tp = 0;
