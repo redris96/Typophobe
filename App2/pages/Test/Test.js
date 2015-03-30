@@ -49,7 +49,7 @@ var i = 0;
 var tp = 0;
 while (legit[tp] != " ") tp++;
 var flag = 1;
-var wh=94;
+var wh=100;
 var gc = 0;
 var c, wc = 0, pr = 0;
 var u = legit.length;
@@ -92,7 +92,7 @@ function x(event) {
             if (i>wh)
             {
                 doScroll();
-                wh += 47;
+                wh += 50;
             }
             //Highlight the next word
             var v = i;
@@ -135,7 +135,7 @@ function randomize() {
     console.log("started randomize");
     document.getElementById("typeit").value = "";
     i = 0;
-    flag = 1; wh = 94;
+    flag = 1; wh = 100;
     gc = 0; pr = 0;
     c, wc = 0; state = 0; up();
     var temp = nx;
@@ -215,7 +215,7 @@ function tick() {
         dis();
         var msg = new Windows.UI.Popups.MessageDialog("");
         
-        var acc=(Number((gc / i) * 100).toPrecision(4));
+        var acc=(Number((gc / (i-wc)) * 100).toPrecision(4));
         var ch = acc * wc / 100;
         top1 = parseInt(localStorage.getItem("top1"));
         top2 = parseInt(localStorage.getItem("top2"));
@@ -231,13 +231,13 @@ function tick() {
         else if(ch>top2)
         {
             top3=top2;
-            top2=ch;
+            top2 = ch;
         }
         else if(ch>top3)
         {
             top3 = ch;
         }
-        msg.title = document.getElementById("wc").innerHTML + " Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%"
+        msg.title = document.getElementById("wc").innerHTML + " Accuracy: " + (Number((gc / (i-wc)) * 100).toPrecision(4)).toString() + "%"
         if (state == 1) {
             msg.title += " Highscore!";
         }
