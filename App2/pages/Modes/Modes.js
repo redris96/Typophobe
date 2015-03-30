@@ -29,7 +29,7 @@ function quickC() {
     var input = document.getElementById("QuickCustom").value;
     localStorage.setItem("currentMode", "quickcustom");
     localStorage.setItem("quickcustom", 1);
-    localStorage.setItem("quickcustom", input.trim());
+    localStorage.setItem("quickcustom1", input.trim());
     var msg = Windows.UI.Popups.MessageDialog("Mode Applied!");
     msg.showAsync();
 }
