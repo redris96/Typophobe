@@ -22,12 +22,14 @@
 })();
 function loadPara(x) {
     localStorage.setItem("currentMode",x);
-    var msg = Windows.UI.Popups.MessageDialog("Mode Applied! Please press Reset Button in Test Page");
+    var msg = Windows.UI.Popups.MessageDialog("Mode Applied!");
     msg.showAsync();
 }
 function quickC() {
     var input = document.getElementById("QuickCustom").value;
-    localStorage.setItem("default", input.trim());
-    var msg = Windows.UI.Popups.MessageDialog("Mode Applied! Please press Reset Button iyolon Test Page");
+    localStorage.setItem("currentMode", "quickcustom");
+    localStorage.setItem("quickcustom", 1);
+    localStorage.setItem("quickcustom", input.trim());
+    var msg = Windows.UI.Popups.MessageDialog("Mode Applied!");
     msg.showAsync();
 }
