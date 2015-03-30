@@ -1,33 +1,10 @@
-﻿// For an introduction to the Page Control template, see the following documentation:
-// http://go.microsoft.com/fwlink/?LinkId=232511
-(function () {
-    "use strict";
+﻿var temp = localStorage.getItem("Music");
+console.log(temp);
+if (temp == "ON") {
+	console.log("yes");
+        toggleMusic();
+}
 
-    WinJS.UI.Pages.define("/pages/Test/Test.html", {
-        // This function is called whenever a user navigates to this page. It
-        // populates the page elements with the app's data.
-        ready: function (element, options) {
-            // TODO: Initialize the page here.
-            var temp = localStorage.getItem("Music");
-            console.log(temp);
-            if (temp == "ON") {
-                console.log("yes");
-                toggleMusic();
-            }
-            document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substring(tp);
-        },
-
-        unload: function () {
-            // TODO: Respond to navigations away from this page.
-        },
-
-        updateLayout: function (element) {
-            /// <param name="element" domElement="true" />
-
-            // TODO: Respond to changes in layout.
-        }
-    });
-})();
 function toggleMusic() {
     
     if (document.getElementById("musicButton").innerText == "Music: ON") {
@@ -39,8 +16,8 @@ function toggleMusic() {
     }
 
 }
-var para = localStorage.getItem("default");
-var legit = para;
+localstorage.setitem("default","mdlkmfd skdf slkfmdsklf dslkfmsdlkfmsdklf msd fsd lsfmdfkldm flksdmf dkl dsklmfsdlkmsdklf slkf ksd fksldm flksd fsdlkm fsdlkm sdlk fs");
+var legit = "mdlkmfd skdf slkfmdsklf dslkfmsdlkfmsdklf msd fsd lsfmdfkldm flksdmf dkl dsklmfsdlkmsdklf";
 var i = 0;
 var tp = 0;
 while (legit[tp] != " ") tp++;
@@ -178,39 +155,6 @@ function tick() {
     else {
         clearInterval(ticker);
         dis();
-        var msg = new Windows.UI.Popups.MessageDialog("");
-        
-        var acc=(Number((gc / i) * 100).toPrecision(4));
-        var ch = acc * wc / 100;
-        top1 = parseInt(localStorage.getItem("top1"));
-        top2 = parseInt(localStorage.getItem("top2"));
-        top3 = parseInt(localStorage.getItem("top3"));
-        var state = 0;
-        if(ch>top1)
-        {
-            top3 = top2;
-            top2 = top1;
-            top1 = ch;
-            state = 1;
-        }
-        else if(ch>top2)
-        {
-            top3=top2;
-            top2=ch;
-        }
-        else if(ch>top3)
-        {
-            top3 = ch;
-        }
-        msg.title = "WPM: " + wc + " Accuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%"
-        if (state == 1) {
-            msg.title += " Highscore!";
-        }
-        /*msg.commands.append(new Windows.UI.Popups.UICommand(
-                "Try again",));
-        msg.commands.append(
-            new Windows.UI.Popups.UICommand("Back", commandInvokedHandler));*/
-        msg.showAsync();
         localStorage.setItem("top1",""+top1);
         localStorage.setItem("top2", "" + top2);
         localStorage.setItem("top3","" + top3);
@@ -232,15 +176,5 @@ function doScroll() {
 function up(){
     $("#dis").animate({ scrollTop: 0 }, "fast");
 }
-
-/*function load() {
-    Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appx:///pages//pages/Text/c/c1.txt").done(
-    function (file) {
-        // Process file
-        legit = file.toString;
-        reset();
-    }
-);
-}*/
 
 
