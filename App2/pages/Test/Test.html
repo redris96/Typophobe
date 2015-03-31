@@ -13,7 +13,7 @@
 <body>
     <div class="Test fragment">
         <header class="page-header" aria-label="Header content" role="banner">
-            <button class="back-button" data-win-control="WinJS.UI.BackButton" onclick="reset()"></button>
+            <button class="back-button" data-win-control="WinJS.UI.BackButton" onclick="load()"></button>
            <h1 class="titlearea win-type-ellipsis">
                 <span class="pagetitle">Test Your Speed</span>
             </h1>
@@ -21,7 +21,7 @@
         <section class="page-section" aria-label="Main content" role="main">
             <center>
                     <div id="dis" style="width:80%;height:160px;margin:50px;overflow-y: auto;font-size:260%;"><span style="background-color: #9c8c8c">lol</span></div>
-                <input type="text" id="typeit" onkeyup="x(event)" autofocus onkeydown="startTimer(60)"  /> <br /><br/>
+                <input type="text" id="typeit" onkeyup="x(event)" focusOnKeyboardInput="true" onkeydown="startTimer(60)"  /> <br /><br/>
                     <h3 id="acc">Accuracy: 0%</h3>
                     <h3 id="wc">WPM: 0</h3> 
                     <h3 id="countdown">Countdown: 60</h3> <br />
