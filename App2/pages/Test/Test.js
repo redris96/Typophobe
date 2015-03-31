@@ -46,7 +46,7 @@ var i = 0;
 var tp = 0;
 while (legit[tp] != " ") tp++;
 var flag = 1;
-var wh=97;
+var wh=98;
 var gc = 0;
 var c, wc = 0, pr = 0;
 var u = legit.length;
@@ -89,7 +89,7 @@ function x(event) {
             if (i>wh)
             {
                 doScroll();
-                wh += 48.5;
+                wh += 49;
             }
             //Highlight the next word
             var v = i;
