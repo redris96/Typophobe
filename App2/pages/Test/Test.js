@@ -7,13 +7,10 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
-            console.log(localStorage.getItem("currentMode" + "OH"));
             // TODO: Initialize the page here.
             var temp = localStorage.getItem("Music");
-            console.log(temp);
             randomize();
             if (temp == "ON") {
-                console.log("yes");
                 toggleMusic();
                 
             }
@@ -161,7 +158,6 @@ function randomize() {
     u = legit.length;
     tp = 0;
     while (legit[tp] != " ") tp++;
-    console.log('<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp));
     document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
     document.getElementById("wc").innerHTML = "WPM: 0";
     document.getElementById("acc").innerHTML = "Accuracy: 0%";
