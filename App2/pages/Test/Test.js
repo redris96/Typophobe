@@ -11,8 +11,7 @@
             var temp = localStorage.getItem("Music");
             randomize();
             if (temp == "ON") {
-                toggleMusic();
-                
+                toggleMusic();     
             }
             document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substring(tp);
         },
@@ -47,7 +46,7 @@ var i = 0;
 var tp = 0;
 while (legit[tp] != " ") tp++;
 var flag = 1;
-var wh=100;
+var wh=97;
 var gc = 0;
 var c, wc = 0, pr = 0;
 var u = legit.length;
@@ -90,7 +89,7 @@ function x(event) {
             if (i>wh)
             {
                 doScroll();
-                wh += 50;
+                wh += 48.5;
             }
             //Highlight the next word
             var v = i;
@@ -235,8 +234,9 @@ function dis() {
 
 function doScroll() {
     //$('#dis').scrollTop($('#dis').scrollTop() + 53);
-    var lol = $("#dis").scrollTop();
-    $("#dis").animate({ scrollTop: lol+53}, "slow");
+    var sc = $("#dis").height() * .34;
+    var lol = $("#dis").scrollTop(); 
+    $("#dis").animate({ scrollTop: lol+sc}, "slow");
 }
 
 function up(){
