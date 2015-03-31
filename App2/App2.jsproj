@@ -102,8 +102,6 @@
     <Content Include="pages\Settings\Settings.css" />
     <Content Include="pages\Settings\Settings.html" />
     <Content Include="pages\Settings\Settings.js" />
-    <Content Include="pages\Test\music.png" />
-    <Content Include="pages\Test\musicnot.png" />
     <Content Include="pages\Test\Test.css" />
     <Content Include="pages\Test\Test.html" />
     <Content Include="pages\Test\Test.js" />
