@@ -51,7 +51,10 @@ var legit = localStorage.getItem("default");
 var i = 0;
 var tp = 0;
 //while (legit[tp] != " ") tp++;
+<<<<<<< HEAD
 console.log("first word");
+=======
+>>>>>>> origin/master
 var flag = 1;
 var wh=98;
 var gc = 0;
@@ -249,6 +252,3 @@ function doScroll() {
 function up(){
     $("#dis").animate({ scrollTop: 0 }, "fast");
 }
-
-
-

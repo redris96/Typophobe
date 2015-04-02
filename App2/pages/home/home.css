@@ -2,36 +2,19 @@
     margin: auto 120px;
 }
 
-/*#swag{
-        position: center;
-	    text-align: center;
-	    background-color: #4800ff;
-	    height: 1.6em;
-       padding-right: 2em;
-       padding-left: 3em;
-	    //box-shadow: 10px 10px 15px #888888;
-}
-    
-#yolo{
-           padding-top: 0.2em;
-		  padding-left: 7em;
-		  padding-right: 1em;
-		  font-family: Verdana, sans-serif;
-          color: #ffffff;
 
-} */
 .nav-bar{
 	 margin-left: 10em;
 	 margin-top: 6em;
 	}
 
 .nav-big{
-	 width: 16em;
+	 width: 20vw;
 	 background-color: #000;
 	 transition: background-color 0.2s linear 0s;
 	 border-style: solid;
 	 border-color: #151414;
-	 height: 10em;
+	 height: 15vh;
 	 
 	}
 
@@ -42,63 +25,56 @@
 	      }
 .nav-big h2{
 	    color: #fff;
-	    padding-top: 17px;
-	    font-size: 2.6em;
-        padding-left: 0.2em;
+	    padding-top: 5vh;
+	    font-size: 6vh;
+        left: 0.2vw;
 	   }
 
 .Tit{
-    float:left;
-    height: 13em;
-    width: 27em;
-    padding-top: 4em;
+    height: 29vh;
+    position:absolute;
+    width: 30vw;
     text-align: center;
     overflow: hidden;
-    margin-right: 1em;
+    left: 15vw;
+    top:30vh;
    }
 .Mod{
-    float:left;
-    height: 13em;
-    width: 27em;
-    padding-top: 4em;
+    position:absolute;
+    height: 29vh;
+    width: 30vw;
     text-align: center;
     overflow: hidden;
-    margin-left: 0em;
-    margin-right: 10em;
+    right:23vw;
+    top:30vh;
    }
 .Sett{
-    float:left;
+    position:absolute;
     text-align: center;
-    width:14em;
-    height:8em;
+    width:15vw;
+    height:18vh;
     overflow: hidden;
-    margin-top: 1em;
-   /*border-bottom-left-radius:2em; */
-   margin-left: 0em;
-   margin-right: 0em;
-    padding-top: 2em;
+    left:15vw;
+    top:61vh;
    }
 
 .abo{
-    float:left;
-    margin-top: 1em;
-    width:13em;
-    height:8em;
+    position:absolute;
+    width:14vw;
+    height:18vh;
     text-align: center;
     overflow: hidden;
-    margin-left: 0em;
-    margin-right: 1em;
-    padding-top: 2em;
+    left:31vw;
+    top:61vh;
    }
 .weed{
-    float:left;
-    margin-top: 1em;
-    width: 27em;
-    height:8em;
+    position:absolute;
+    width: 30vw;
+    height:18vh;
     text-align: center;
     overflow: hidden;
-    margin-left: 0em;
-    padding-top: 2em;
+    right:23vw;
+    top: 61vh;
    }
 
 
