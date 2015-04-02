@@ -8,12 +8,17 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
             // TODO: Initialize the page here.
+            console.log("Initialized");
             var temp = localStorage.getItem("Music");
+            console.log("Music checked");
             randomize();
+            console.log("Randomized");
             if (temp == "ON") {
                 toggleMusic();     
             }
+            console.log("music loaded");
             document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substring(tp);
+            console.log("para loaded");
         },
 
         unload: function () {
@@ -40,11 +45,16 @@ function toggleMusic() {
 }
 //var x = Math.floor((Math.random() * 4) + 1);
 //var para = localStorage.getItem("" + x);
+console.log("first load");
 var nx,was=0;
 var legit = localStorage.getItem("default");
 var i = 0;
 var tp = 0;
 //while (legit[tp] != " ") tp++;
+<<<<<<< HEAD
+console.log("first word");
+=======
+>>>>>>> origin/master
 var flag = 1;
 var wh=98;
 var gc = 0;

@@ -26,6 +26,10 @@ function loadPara(x) {
     msg.showAsync();
 }
 function quickC() {
+    //input validation
+    if (1 == 0) {
+        msg = Windows.UI.Popups.MessageDialog("Not a valid paragraph, remove '<','>','#' and single words");
+    }
     var input = document.getElementById("QuickCustom").value;
     localStorage.setItem("currentMode", "quickcustom");
     localStorage.setItem("quickcustom", "1");
