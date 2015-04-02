@@ -27,13 +27,18 @@ function loadPara(x) {
 }
 function quickC() {
     //input validation
-    if (1 == 0) {
-        msg = Windows.UI.Popups.MessageDialog("Not a valid paragraph, remove '<','>','#' and single words");
-    }
     var input = document.getElementById("QuickCustom").value;
-    localStorage.setItem("currentMode", "quickcustom");
-    localStorage.setItem("quickcustom", "1");
-    localStorage.setItem("quickcustom1", input.trim());
-    var msg = Windows.UI.Popups.MessageDialog("Mode Applied!");
-    msg.showAsync();
+    var re = /[#<>]/;
+    var re2 = /[a-zA-Z0-9]+ [a-zA-Z0-9]+/;
+    if (re.test(input)||!re2.test(input)) {
+        msg = Windows.UI.Popups.MessageDialog("Not a valid paragraph, remove '<' , '>' , '#' and single words");
+        msg.showAsync();
+    }
+    else {
+        localStorage.setItem("currentMode", "quickcustom");
+        localStorage.setItem("quickcustom", "1");
+        localStorage.setItem("quickcustom1", input.trim());
+        var msg = Windows.UI.Popups.MessageDialog("Mode Applied!");
+        msg.showAsync();
+    }
 }
