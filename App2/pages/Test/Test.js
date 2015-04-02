@@ -44,7 +44,7 @@ var nx,was=0;
 var legit = localStorage.getItem("default");
 var i = 0;
 var tp = 0;
-while (legit[tp] != " ") tp++;
+//while (legit[tp] != " ") tp++;
 var flag = 1;
 var wh=98;
 var gc = 0;
@@ -242,6 +242,3 @@ function doScroll() {
 function up(){
     $("#dis").animate({ scrollTop: 0 }, "fast");
 }
-
-
-
