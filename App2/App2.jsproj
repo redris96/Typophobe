@@ -106,6 +106,7 @@
     <Content Include="pages\Test\Test.html" />
     <Content Include="pages\Test\Test.js" />
     <Content Include="pages\Text\c\c1.txt" />
+    <Content Include="theatre.js" />
     <None Include="App2_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
