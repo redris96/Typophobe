@@ -63,9 +63,8 @@ function x(event) {
     var a = event.keyCode;
     if (a==32) {
         var change = document.getElementById("typeit").value;
-        var ret=change.split(" ");
-        document.getElementById("typeit").value = ret[1];
-        change = ret[0];
+        document.getElementById("typeit").value = "";
+        change = change.trim();
         //change.replace(/</g, "&lt;");
         //change.replace(/>/g, "&gt;");
         //change.replace(/&/g, "&amp;");
