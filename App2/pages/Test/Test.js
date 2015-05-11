@@ -57,7 +57,9 @@ var wh=98;
 var gc = 0;
 var c, wc = 0, pr = 0;
 var u = legit.length;
+
 function x(event) {
+    var display = document.getElementById("dis");
     var a = event.keyCode;
     if (a==32) {
         var change = document.getElementById("typeit").value;
@@ -101,11 +103,11 @@ function x(event) {
             //Highlight the next word
             var v = i;
             while (legit[v] != " " && v < u ) v++;
-            var temp = document.getElementById("dis").innerHTML;
+            var temp = display.innerHTML;
             if (c == 0)
-                document.getElementById("dis").innerHTML = legit.substring(0,pr) + '<span style="color: #ff0000">' + legit.substr(pr, i - pr) + "</span>" + '<span style="background-color: #9c8c8c">' + legit.substr(i, v - i) + "</span>" + legit.substr(v);
+                display.innerHTML = legit.substring(0,pr) + '<span style="color: #ff0000">' + legit.substr(pr, i - pr) + "</span>" + '<span style="background-color: #9c8c8c">' + legit.substr(i, v - i) + "</span>" + legit.substr(v);
             else
-                document.getElementById("dis").innerHTML = legit.substring(0,pr) + '<span style="color: #00ff21">' + legit.substr(pr, i - pr) + "</span>" + '<span style="background-color: #9c8c8c">' + legit.substr(i, v - i) + "</span>" + legit.substr(v);
+                display.innerHTML = legit.substring(0,pr) + '<span style="color: #00ff21">' + legit.substr(pr, i - pr) + "</span>" + '<span style="background-color: #9c8c8c">' + legit.substr(i, v - i) + "</span>" + legit.substr(v);
             flag = 1; pr = i;
             if (i > u)
                 timeInSecs = 0;

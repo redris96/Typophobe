@@ -56,7 +56,6 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="01 A Night Of Dizzy Spells.mp3" />
     <Content Include="css\default.css" />
     <Content Include="css\Microsoft.VisualStudio.Blend.Html.Intrinsic.Grid.css" />
     <Content Include="css\Microsoft.VisualStudio.Blend.Html.Intrinsic.Grid3x3.css" />

@@ -12,11 +12,7 @@
             var theater = new TheaterJS()
             theater.describe("Typophobe", { speed: .8, accuracy: .4, invincibility: 0.5 }, "#typophobe");
             var i = 0;
-            while (i < 1000) {
-                theater.write("Typophobe:Typophobe", 400);
-                i++;
-                console.log("run");
-            }
+            theater.write("Typophobe:Typophobe", 400);
         },
         linkClickEventHandler: function (eventInfo) {
         eventInfo.preventDefault();
