@@ -59,6 +59,7 @@ var c, wc = 0, pr = 0;
 var u = legit.length;
 
 function x(event) {
+    startTimer(60);
     var display = document.getElementById("dis");
     var a = event.keyCode;
     if (a==32) {
