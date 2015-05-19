@@ -51,6 +51,7 @@
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <PackageCertificateKeyFile>App2_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>DF8C0766444F24F97EA276B5B7BB0F60BA577D64</PackageCertificateThumbprint>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
