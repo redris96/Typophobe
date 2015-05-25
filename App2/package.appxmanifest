@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:build="http://schemas.microsoft.com/developer/appx/2012/build" IgnorableNamespaces="build">
-  <Identity Name="f7c45bbb-19d9-47f8-9ae7-62daaf110af2" Version="1.0.0.0" Publisher="CN=Rishith Reddy" />
+  <Identity Name="Typophobe" Version="1.0.0.0" Publisher="CN=6packAPPs" />
   <Properties>
-    <DisplayName>App2</DisplayName>
-    <PublisherDisplayName>Rishith Reddy</PublisherDisplayName>
+    <DisplayName>Typophobe</DisplayName>
+    <PublisherDisplayName>6packAPPs</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
   <Prerequisites>
@@ -15,16 +15,21 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <m2:VisualElements DisplayName="Typophobe" Description="Typophobe Speed Test!&#xD;&#xA;Test your typing skills with this sleek and beautiful typing app. Get to know your words per minute (WPM) and try to improve your accuracy to be the best out there!&#xD;&#xA;&#xD;&#xA;Why use Typophobe?&#xD;&#xA;-We have a unique programming language feature to drill those hot keys into your muscle memory&#xD;&#xA;-Sleek, beutiful and minimalistic design&#xD;&#xA;-Soon to be inplemented with an online store where coustom modules can be downloaded" ForegroundText="light" BackgroundColor="#464646" Square150x150Logo="images\Logo.png" Square30x30Logo="images\SmallLogo.png">
-        <m2:DefaultTile Square70x70Logo="images\Square70x70Logo.png" DefaultSize="square150x150Logo" ShortName="Typophobe" Square310x310Logo="images\Square310x310Logo.png" Wide310x150Logo="images\Wide310x150Logo.png">
+      <m2:VisualElements DisplayName="Typophobe" Description="Typophobe Speed Test!\nTest your typing skills with this sleek and beautiful typing app. Get to know your words per minute (WPM) and try to improve your accuracy to be the best out there!\nWhy use Typophobe?\n-We have a unique programming language feature to drill those hot keys into your muscle memory\n-Sleek, beutiful and minimalistic design\n-Soon to be inplemented with an online store where coustom modules can be downloaded" ForegroundText="light" BackgroundColor="#292929" Square150x150Logo="images\Logo.png" Square30x30Logo="images\SmallLogo.png">
+        <m2:DefaultTile DefaultSize="square150x150Logo" ShortName="Typophobe" Square310x310Logo="images\Square310x310Logo.png" Wide310x150Logo="images\Wide310x150Logo.png" Square70x70Logo="images\Square70x70Logo.png">
+          <m2:ShowNameOnTiles>
+            <m2:ShowOn Tile="square150x150Logo" />
+            <m2:ShowOn Tile="wide310x150Logo" />
+            <m2:ShowOn Tile="square310x310Logo" />
+          </m2:ShowNameOnTiles>
         </m2:DefaultTile>
         <m2:SplashScreen Image="images\splashscreen.png" BackgroundColor="#1a1a1a" />
+        <m2:InitialRotationPreference>
+          <m2:Rotation Preference="landscape" />
+        </m2:InitialRotationPreference>
       </m2:VisualElements>
     </Application>
   </Applications>
-  <Capabilities>
-    <Capability Name="internetClient" />
-  </Capabilities>
   <build:Metadata>
     <build:Item Name="Blend" Version="12.0.51020.0" />
   </build:Metadata>
