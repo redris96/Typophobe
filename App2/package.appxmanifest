@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:build="http://schemas.microsoft.com/developer/appx/2012/build" IgnorableNamespaces="build">
-  <Identity Name="Typophobe" Version="1.0.0.0" Publisher="CN=6packAPPs" />
+  <Identity Name="331166packAPPs.Typophobe" Version="1.1.0.3" Publisher="CN=08455921-1F91-4387-811D-866018A1ADE4" />
   <Properties>
     <DisplayName>Typophobe</DisplayName>
     <PublisherDisplayName>6packAPPs</PublisherDisplayName>
@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <m2:VisualElements DisplayName="Typophobe" Description="Typophobe Speed Test!\nTest your typing skills with this sleek and beautiful typing app. Get to know your words per minute (WPM) and try to improve your accuracy to be the best out there!\nWhy use Typophobe?\n-We have a unique programming language feature to drill those hot keys into your muscle memory\n-Sleek, beautiful and minimalistic design\n-Soon to be implemented with an online store where custom modules can be created and downloaded." ForegroundText="light" BackgroundColor="#292929" Square150x150Logo="images\Logo.png" Square30x30Logo="images\SmallLogo.png">
+      <m2:VisualElements DisplayName="Typophobe" Description="Typophobe Speed Test!\nTest your typing skills with this sleek and beautiful typing app. Get to know your words per minute (WPM) and try to improve your accuracy to be the best out there!\nWhy use Typophobe?\n-We have a unique programming language feature to drill those hot keys into your muscle memory\n-Sleek, beautiful and minimalistic design\n-Soon to be implemented with an online store where custom modules can be created and downloaded." ForegroundText="light" BackgroundColor="#292929" Square150x150Logo="images\Logo.png" Square30x30Logo="images\SmallLogo.png" ToastCapable="false">
         <m2:DefaultTile DefaultSize="square150x150Logo" ShortName="Typophobe" Square310x310Logo="images\Square310x310Logo.png" Wide310x150Logo="images\Wide310x150Logo.png" Square70x70Logo="images\Square70x70Logo.png">
           <m2:ShowNameOnTiles>
             <m2:ShowOn Tile="square150x150Logo" />
@@ -27,6 +27,7 @@
         <m2:InitialRotationPreference>
           <m2:Rotation Preference="landscape" />
         </m2:InitialRotationPreference>
+        <m2:ApplicationView MinWidth="width500" />
       </m2:VisualElements>
     </Application>
   </Applications>
