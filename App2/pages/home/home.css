@@ -4,8 +4,6 @@
 
 
 .nav-bar{
-	 margin-left: 10em;
-	 margin-top: 6em;
 	}
 
 .nav-big{
@@ -27,54 +25,38 @@
 	    color: #fff;
 	    padding-top: 5vh;
 	    font-size: 6vh;
-        left: 0.2vw;
 	   }
 
 .Tit{
     height: 29vh;
-    position:absolute;
     width: 30vw;
     text-align: center;
     overflow: hidden;
-    left: 15vw;
-    top:30vh;
    }
 .Mod{
-    position:absolute;
     height: 29vh;
     width: 30vw;
     text-align: center;
     overflow: hidden;
-    right:23vw;
-    top:30vh;
    }
 .Sett{
-    position:absolute;
     text-align: center;
     width:15vw;
     height:18vh;
     overflow: hidden;
-    left:15vw;
-    top:61vh;
    }
 
 .abo{
-    position:absolute;
     width:14vw;
     height:18vh;
     text-align: center;
     overflow: hidden;
-    left:31vw;
-    top:61vh;
    }
 .weed{
-    position:absolute;
     width: 30vw;
     height:18vh;
     text-align: center;
     overflow: hidden;
-    right:23vw;
-    top: 61vh;
    }
 
 
@@ -82,3 +64,22 @@ a{
   text-decoration: none;
   color: #767683;
  }
+
+.table {
+    display: table;
+}
+
+.row {
+    display: table-row;
+}
+
+.cell {
+    display: table-cell;
+}
+
+.cell:focus {
+    background-color: #36AEF0;
+    outline: 2px white solid;
+    z-index: 2;
+    box-shadow: 0 0 20px 1px #000000;
+}

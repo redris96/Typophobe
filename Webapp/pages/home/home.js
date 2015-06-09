@@ -8,14 +8,20 @@
             // TODO: Initialize the page here.
             WinJS.Utilities.query("a").listen("click", 
                 this.linkClickEventHandler, false);
+            console.log("run");
+            var theater = new TheaterJS()
+            theater.describe("Typophobe", { speed: .8, accuracy: .4, invincibility: 0.5 }, "#typophobe");
+            var i = 0;
+            theater.write("Typophobe:Typophobe", 400);
         },
         linkClickEventHandler: function (eventInfo) {
         eventInfo.preventDefault();
         var link = eventInfo.currentTarget;
         WinJS.Navigation.navigate(link.href);
+       
+        }
     }
-    });
+    );
 
 })();
-
 

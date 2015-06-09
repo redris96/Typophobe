@@ -1,10 +1,37 @@
-﻿var temp = localStorage.getItem("Music");
-console.log(temp);
-if (temp == "ON") {
-	console.log("yes");
-        toggleMusic();
-}
+﻿// For an introduction to the Page Control template, see the following documentation:
+// http://go.microsoft.com/fwlink/?LinkId=232511
+(function () {
+    "use strict";
 
+    WinJS.UI.Pages.define("/pages/Test/Test.html", {
+        // This function is called whenever a user navigates to this page. It
+        // populates the page elements with the app's data.
+        ready: function (element, options) {
+            // TODO: Initialize the page here.
+            console.log("Initialized");
+            var temp = localStorage.getItem("Music");
+            console.log("Music checked");
+            randomize();
+            console.log("Randomized");
+            if (temp == "ON") {
+                toggleMusic();     
+            }
+            console.log("music loaded");
+            document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substring(tp);
+            console.log("para loaded");
+        },
+
+        unload: function () {
+            // TODO: Respond to navigations away from this page.
+        },
+
+        updateLayout: function (element) {
+            /// <param name="element" domElement="true" />
+
+            // TODO: Respond to changes in layout.
+        }
+    });
+})();
 function toggleMusic() {
     
     if (document.getElementById("musicButton").innerText == "Music: ON") {
@@ -14,28 +41,39 @@ function toggleMusic() {
         document.getElementById("music").play();
         document.getElementById("musicButton").innerHTML = "Music: ON";
     }
-
+    document.getElementById("typeit").focus();
 }
-localstorage.setitem("default","mdlkmfd skdf slkfmdsklf dslkfmsdlkfmsdklf msd fsd lsfmdfkldm flksdmf dkl dsklmfsdlkmsdklf slkf ksd fksldm flksd fsdlkm fsdlkm sdlk fs");
-var legit = "mdlkmfd skdf slkfmdsklf dslkfmsdlkfmsdklf msd fsd lsfmdfkldm flksdmf dkl dsklmfsdlkmsdklf";
+//var x = Math.floor((Math.random() * 4) + 1);
+//var para = localStorage.getItem("" + x);
+console.log("first load");
+var nx,was=0;
+var legit = localStorage.getItem("default");
 var i = 0;
 var tp = 0;
-while (legit[tp] != " ") tp++;
+//while (legit[tp] != " ") tp++;
+console.log("first word");
 var flag = 1;
-var wh=94;
+var wh=98;
 var gc = 0;
 var c, wc = 0, pr = 0;
 var u = legit.length;
+
 function x(event) {
+    startTimer(60);
+    var display = document.getElementById("dis");
     var a = event.keyCode;
     if (a==32) {
         var change = document.getElementById("typeit").value;
         document.getElementById("typeit").value = "";
+        change = change.trim();
+        //change.replace(/</g, "&lt;");
+        //change.replace(/>/g, "&gt;");
+        //change.replace(/&/g, "&amp;");
         if (flag == 0) {
-            var fl = 0;
+            var fl = 0,cl=change.length;
             var li = i;
             c = 0;
-            for (j = 0; j < change.length && li < legit.length && legit[li] != " "; li++, j++) {
+            for (j = 0; j < cl && li < u && legit[li] != " "; li++, j++) {
                 if (change[j] == legit[li])
                     c++;
                 else {
@@ -43,32 +81,37 @@ function x(event) {
                     break;
                 }
             }
-            if (change.length > li - i+1)
+            while (legit[i] != " " && i < u)
+                i++;
+            i++;
+            if (cl != i-pr-1)
                 fl = 1;
             if (fl == 1)
                 c = 0;
             gc += c;
-            while (legit[i] != " " && i < u)
-                i++;
-            i++;
             wc++;
             document.getElementById("wc").innerHTML = "WPM: " + parseInt(wc/(60-timeInSecs)*60);
             document.getElementById("acc").innerHTML = "Accuracy: " + (Number((gc / (i-wc)) * 100).toPrecision(4)).toString() + "%";
             //scroll
+            if (i > u)
+            { timeInSecs = 0; return; }
             if (i>wh)
             {
                 doScroll();
-                wh += 47;
+                wh += 49;
             }
             //Highlight the next word
             var v = i;
             while (legit[v] != " " && v < u ) v++;
-            var temp = document.getElementById("dis").innerHTML;
+            var temp = display.innerHTML;
             if (c == 0)
-                document.getElementById("dis").innerHTML = legit.substring(0,pr) + '<span style="color: #ff0000">' + legit.substr(pr, i - pr) + "</span>" + '<span style="background-color: #9c8c8c">' + legit.substr(i, v - i) + "</span>" + legit.substr(v);
+                display.innerHTML = legit.substring(0,pr) + '<span style="color: #ff0000">' + legit.substr(pr, i - pr) + "</span>" + '<span style="background-color: #9c8c8c">' + legit.substr(i, v - i) + "</span>" + legit.substr(v);
             else
-                document.getElementById("dis").innerHTML = legit.substring(0,pr) + '<span style="color: #00ff21">' + legit.substr(pr, i - pr) + "</span>" + '<span style="background-color: #9c8c8c">' + legit.substr(i, v - i) + "</span>" + legit.substr(v);
+                display.innerHTML = legit.substring(0,pr) + '<span style="color: #00ff21">' + legit.substr(pr, i - pr) + "</span>" + '<span style="background-color: #9c8c8c">' + legit.substr(i, v - i) + "</span>" + legit.substr(v);
             flag = 1; pr = i;
+            if (i > u)
+                timeInSecs = 0;
+
         }
     }
     else {
@@ -80,8 +123,9 @@ function load() {
     i = 0;
     flag = 1; wh = 94;
     gc = 0; pr = 0;
-    c, wc = 0; state = 0; up();
+    wc = 0; state = 0; up();
     legit = localStorage.getItem("default");
+    u = legit.length;
     tp = 0;
     while (legit[tp] != " ") tp++;
     document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
@@ -96,12 +140,30 @@ function load() {
 function randomize() {
     document.getElementById("typeit").value = "";
     i = 0;
-    flag = 1; wh = 94;
+    flag = 1; wh = 100;
     gc = 0; pr = 0;
     c, wc = 0; state = 0; up();
-    var x = Math.floor((Math.random() * 4) + 1);
-    localStorage.setItem("default", localStorage.getItem("" + x));
+    var temp = nx;
+    curr = localStorage.getItem("currentMode");
+    if (curr == "quickcustom") {
+        if (was == 0)
+            was = 1;
+        else {
+            curr = "defaultmode";
+            localStorage.setItem("currentMode", "defaultmode");
+            was = 0;
+        }
+    }
+    var oh = parseInt(localStorage.getItem(curr));
+    if (oh != 1) {
+        while (temp == nx)
+            nx = Math.floor((Math.random() * oh) + 1);
+    } else {
+        nx = Math.floor((Math.random() * oh) + 1);
+    }
+    localStorage.setItem("default", localStorage.getItem(curr + nx.toString()));
     legit = localStorage.getItem("default");
+    u = legit.length;
     tp = 0;
     while (legit[tp] != " ") tp++;
     document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
@@ -112,27 +174,6 @@ function randomize() {
     document.getElementById("typeit").focus();
     document.getElementById("typeit").disabled = false;
 
-}
-function reset() {
-    /*var msg = new Windows.UI.Popups.MessageDialog("WPM: " + wc + "\nAccuracy: " + (Number((gc / i) * 100).toPrecision(4)).toString() + "%");
-    msg.commands.append(new Windows.UI.Popups.UICommand(
-            "Try again",));
-    msg.commands.append(
-        new Windows.UI.Popups.UICommand("Back", commandInvokedHandler));
-    msg.showAsync();*/
-    document.getElementById("typeit").value = "";
-    i = 0;
-    flag = 1; wh = 94;
-    gc = 0; pr = 0;
-    c, wc = 0; state = 0; up();
-    document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
-    document.getElementById("wc").innerHTML = "WPM: 0";
-    document.getElementById("acc").innerHTML = "Accuracy: 0%";
-    clearInterval(ticker);
-    document.getElementById("countdown").innerHTML = "Countdown: 60";
-    document.getElementById("typeit").focus();
-    document.getElementById("typeit").disabled = false;
-    
 }
 
 var timeInSecs;
@@ -155,6 +196,39 @@ function tick() {
     else {
         clearInterval(ticker);
         dis();
+        var msg = new Windows.UI.Popups.MessageDialog("");
+        
+        var acc=(Number((gc / (i-wc)) * 100).toPrecision(4));
+        var ch = acc * wc / 100;
+        top1 = parseInt(localStorage.getItem("top1"));
+        top2 = parseInt(localStorage.getItem("top2"));
+        top3 = parseInt(localStorage.getItem("top3"));
+        var state = 0;
+        if(ch>top1)
+        {
+            top3 = top2;
+            top2 = top1;
+            top1 = ch;
+            state = 1;
+        }
+        else if(ch>top2)
+        {
+            top3=top2;
+            top2 = ch;
+        }
+        else if(ch>top3)
+        {
+            top3 = ch;
+        }
+        msg.title = document.getElementById("wc").innerHTML + " Accuracy: " + (Number((gc / (i-wc)) * 100).toPrecision(4)).toString() + "%"
+        if (state == 1) {
+            msg.title += " Highscore!";
+        }
+        /*msg.commands.append(new Windows.UI.Popups.UICommand(
+                "Try again",));
+        msg.commands.append(
+            new Windows.UI.Popups.UICommand("Back", commandInvokedHandler));*/
+        msg.showAsync();
         localStorage.setItem("top1",""+top1);
         localStorage.setItem("top2", "" + top2);
         localStorage.setItem("top3","" + top3);
@@ -169,12 +243,11 @@ function dis() {
 
 function doScroll() {
     //$('#dis').scrollTop($('#dis').scrollTop() + 53);
-    var lol = $("#dis").scrollTop();
-    $("#dis").animate({ scrollTop: lol+53}, "slow");
+    var sc = $("#dis").height() * .34;
+    var lol = $("#dis").scrollTop(); 
+    $("#dis").animate({ scrollTop: lol+sc}, "slow");
 }
 
 function up(){
     $("#dis").animate({ scrollTop: 0 }, "fast");
 }
-
-

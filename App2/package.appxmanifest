@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:build="http://schemas.microsoft.com/developer/appx/2012/build" IgnorableNamespaces="build">
-  <Identity Name="331166packAPPs.Typophobe" Version="1.1.0.3" Publisher="CN=08455921-1F91-4387-811D-866018A1ADE4" />
+  <Identity Name="331166packAPPs.Typophobe" Version="1.1.0.4" Publisher="CN=08455921-1F91-4387-811D-866018A1ADE4" />
   <Properties>
     <DisplayName>Typophobe</DisplayName>
     <PublisherDisplayName>6packAPPs</PublisherDisplayName>

@@ -7,20 +7,6 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
-            // TODO: Initialize the page here.
-            var list = JSON.parse(localStorage.getItem("LIST"));
-            var totalstr = localStorage.getItem("TOTAL");
-            var total = parseInt(totalstr);
-            var i;
-            var test = "";
-            for (i = 0; i < total; i++) {
-                var btn = document.createElement("Button");
-                btn.innerText = list[i];
-                btn.setAttribute("onclick","loadPara(\"" + list[i] + "\")");
-                document.getElementById("LIST").appendChild(btn);
-            }
-            console.log(document.getElementById("LIST").innerHTML);
-            
         },
 
         unload: function () {
@@ -35,14 +21,24 @@
     });
 })();
 function loadPara(x) {
-    localStorage.setItem("default", localStorage.getItem(x));
-    console.log(localStorage.getItem("default"));
-    var msg = Windows.UI.Popups.MessageDialog("Mode Applied!, Please press Reset Button in Test Page");
+    localStorage.setItem("currentMode",x);
+    var msg = Windows.UI.Popups.MessageDialog("Mode Applied!");
     msg.showAsync();
 }
 function quickC() {
+    //input validation
     var input = document.getElementById("QuickCustom").value;
-    localStorage.setItem("default", input);
-    var msg = Windows.UI.Popups.MessageDialog("Mode Applied!, Please press Reset Button in Test Page");
-    msg.showAsync();
+    var re = /[#<>]/;
+    var re2 = /[a-zA-Z0-9]+ [a-zA-Z0-9]+/;
+    if (re.test(input)||!re2.test(input)) {
+        msg = Windows.UI.Popups.MessageDialog("Not a valid paragraph, remove '<' , '>' , '#' and single words");
+        msg.showAsync();
+    }
+    else {
+        localStorage.setItem("currentMode", "quickcustom");
+        localStorage.setItem("quickcustom", "1");
+        localStorage.setItem("quickcustom1", input.trim());
+        var msg = Windows.UI.Popups.MessageDialog("Mode Applied!");
+        msg.showAsync();
+    }
 }

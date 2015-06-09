@@ -4,19 +4,24 @@
     <meta charset="utf-8" />
     <title>Home</title>
     <!-- WinJS references -->
-    <link href="ui-dark.css" rel="stylesheet" />
+    <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="/theatre.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
     <link href="/css/default.css" rel="stylesheet" />
-    <link href="home.css" rel="stylesheet" />
-    <script src="home.js"></script>
+    <link href="/pages/home/home.css" rel="stylesheet" />
+    <script src="/pages/home/home.js"></script>
 </head>
 <body>
     <!-- The content that will be loaded and displayed. -->
     <div class="fragment homepage">
         <header aria-label="Header content" role="banner">
-            <h1 id="swag" class="titlearea win-type-ellipsis">
-                <span id="yolo" class="pagetitle" style="position: relative; top: 2.47px; left: 79px;"><img src="tp.png" style="position: relative; width: 86px; height: 74.48px; left: -24px; top: 14.05px;" />Typophobe</span>
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle" style="position: absolute; top: 9vh; left: 14vw; font-size:5hv; "><img src="tp.png" style="position: absolute; width: 7vw; height: 11vh; left: -9vw; top: 0vh;" /><span id="typophobe">Typophobe</span></span>
             </h1>
         </header>
+
         <section aria-label="Main content" role="main">
             <div class="nav-bar">
                 <a href="/pages/Test/Test.html">
@@ -43,7 +48,6 @@
                 <a href="/pages/About/About.html">
                     <div class="nav-big abo">
                         <h2>
-
                             About
                         </h2>
                     </div>
@@ -51,13 +55,10 @@
                 <a href="/pages/High Scores/High Scores.html">
                     <div class="nav-big weed">
                         <h2>
-
                             High Scores
                         </h2>
                     </div>
                 </a>
-                  
-
             </div>
         </section>
     </div>

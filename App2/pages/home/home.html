@@ -23,43 +23,135 @@
         </header>
 
         <section aria-label="Main content" role="main">
-            <div class="nav-bar">
-                <a href="/pages/Test/Test.html">
-                    <div class="nav-big Tit">
-                        <h2>
-                            Type Test
-                        </h2>
+            <!-- <div class="container" data-win-control="WinJS.UI.Hub">
+                <div id="section1" class="section" data-win-control="WinJS.UI.HubSection" data-win-options="{header: 'Section 1', isHeaderStatic: true}">
+                    <div class="table">
+                        <div class="row">
+                            <div class="cell">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="tall cell start" tabindex="1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cell">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="large cell" tabindex="2"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="cell">
+                                            <div class="table">
+                                                <div class="row">
+                                                    <div class="square cell" tabindex="3"></div>
+                                                    <div class="square cell" tabindex="4"></div>
+                                                    <div class="square cell" tabindex="5"></div>
+                                                    <div class="square cell" tabindex="6"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cell">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="square cell" tabindex="7" data-win-focus="{up: '#section1 .win-hub-section-header-tabstop'}"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="square cell" tabindex="8"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="square cell" tabindex="9"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </a>
-                <a href="/pages/Modes/Modes.html">
-                    <div class="nav-big Mod">
-                        <h2>
-                            Advanced Modes
-                        </h2>
+                </div>
+                <div id="section2" class="section" data-win-control="WinJS.UI.HubSection" data-win-options="{header: 'Section 2', isHeaderStatic: true}">
+                    <div class="table">
+                        <div class="row">
+                            <div class="wide cell" tabindex="10"></div>
+                        </div>
+                        <div class="row">
+                            <div class="wide cell" tabindex="11"></div>
+                        </div>
+                        <div class="row">
+                            <div class="wide cell" tabindex="12"></div>
+                        </div>
                     </div>
-                </a>
-                <a href="/pages/Settings/Settings.html">
-                    <div class="nav-big Sett">
-                        <h2>
-                            Settings
-                        </h2>
+                </div>
+            </div>-->
+            <div class="nav-bar container" data-win-control="WinJS.UI.Hub">
+                <div id="section1" class="section" data-win-control="WinJS.UI.HubSection" data-win-options="{header: 'Main Menu', isHeaderStatic: true}">
+                    <div class="table">
+                        <div class="row">
+                            <a href="/pages/Test/Test.html">
+                                <div class="win-focusable cell nav-big Tit">
+                                    <h2>
+                                        Type Test
+                                    </h2>
+                                </div>
+                            </a>
+                            <a href="/pages/Modes/Modes.html">
+                                <div class="cell nav-big Mod">
+                                    <h2>
+                                        Advanced Modes
+                                    </h2>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="row">
+                            <a href="/pages/Settings/Settings.html">
+                                <div class="cell nav-big Sett">
+                                    <h2>
+                                        Settings
+                                    </h2>
+                                </div>
+                            </a>
+                            <a href="/pages/About/About.html">
+                                <div class="cell nav-big abo">
+                                    <h2>
+                                        About
+                                    </h2>
+                                </div>
+                            </a>
+                            <a href="/pages/High Scores/High Scores.html">
+                                <div class="cell nav-big weed">
+                                    <h2>
+                                        High Scores
+                                    </h2>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </a>
-                <a href="/pages/About/About.html">
-                    <div class="nav-big abo">
-                        <h2>
-                            About
-                        </h2>
+                </div>
+                <div id="section2" class="section" data-win-control="WinJS.UI.HubSection" data-win-options="{header: 'Modes', isHeaderStatic: true}">
+                    <div class="row">
+                        <a href="/pages/Settings/Settings.html">
+                            <div class="cell nav-big Sett">
+                                <h2>
+                                    Browse Local
+                                </h2>
+                            </div>
+                        </a>
+                        <a href="/pages/About/About.html">
+                            <div class="cell nav-big abo">
+                                <h2>
+                                    Go To Store
+                                </h2>
+                            </div>
+                        </a>
+                        <a href="/pages/High Scores/High Scores.html">
+                            <div class="cell nav-big weed">
+                                <h2>
+                                    Apply Last Used
+                                </h2>
+                            </div>
+                        </a>
                     </div>
-                </a>         
-                <a href="/pages/High Scores/High Scores.html">
-                    <div class="nav-big weed">
-                        <h2>
-                            High Scores
-                        </h2>
-                    </div>
-                </a>
-            </div>
+                </div>
         </section>
     </div>
 </body>

@@ -41,11 +41,12 @@ function toggleMusic() {
         document.getElementById("music").play();
         document.getElementById("musicButton").innerHTML = "Music: ON";
     }
-    document.getElementById("typeit").focus();
+    
 }
 //var x = Math.floor((Math.random() * 4) + 1);
 //var para = localStorage.getItem("" + x);
 console.log("first load");
+setTimeout(function () { console.log("yo"); document.getElementById("typeit"); }, 500);
 var nx,was=0;
 var legit = localStorage.getItem("default");
 var i = 0;
