@@ -46,7 +46,6 @@ function toggleMusic() {
 //var x = Math.floor((Math.random() * 4) + 1);
 //var para = localStorage.getItem("" + x);
 console.log("first load");
-setTimeout(function () { console.log("yo"); document.getElementById("typeit"); }, 500);
 var nx,was=0;
 var legit = localStorage.getItem("default");
 var i = 0;
@@ -54,11 +53,18 @@ var tp = 0;
 //while (legit[tp] != " ") tp++;
 console.log("first word");
 var flag = 1;
-var wh=98;
+var wh = 98;
 var gc = 0;
 var c, wc = 0, pr = 0;
 var u = legit.length;
-
+function setup() {
+    document.getElementById("typeit").value = "";
+    i = 0;
+    flag = 1; wh = 100;
+    gc = 0; pr = 0;
+    c, wc = 0; state = 0; up();
+    legit = localStorage.getItem("default");
+}
 function x(event) {
     startTimer(60);
     var display = document.getElementById("dis");
@@ -120,12 +126,7 @@ function x(event) {
     }
 }
 function load() {
-    document.getElementById("typeit").value = "";
-    i = 0;
-    flag = 1; wh = 94;
-    gc = 0; pr = 0;
-    wc = 0; state = 0; up();
-    legit = localStorage.getItem("default");
+    setup();
     u = legit.length;
     tp = 0;
     while (legit[tp] != " ") tp++;
@@ -138,12 +139,8 @@ function load() {
     document.getElementById("typeit").disabled = false;
 
 }
+
 function randomize() {
-    document.getElementById("typeit").value = "";
-    i = 0;
-    flag = 1; wh = 100;
-    gc = 0; pr = 0;
-    c, wc = 0; state = 0; up();
     var temp = nx;
     curr = localStorage.getItem("currentMode");
     if (curr == "quickcustom") {
@@ -163,18 +160,7 @@ function randomize() {
         nx = Math.floor((Math.random() * oh) + 1);
     }
     localStorage.setItem("default", localStorage.getItem(curr + nx.toString()));
-    legit = localStorage.getItem("default");
-    u = legit.length;
-    tp = 0;
-    while (legit[tp] != " ") tp++;
-    document.getElementById("dis").innerHTML = '<span style="background-color: #9c8c8c">' + legit.substr(0, tp) + '</span>' + legit.substr(tp);
-    document.getElementById("wc").innerHTML = "WPM: 0";
-    document.getElementById("acc").innerHTML = "Accuracy: 0%";
-    clearInterval(ticker);
-    document.getElementById("countdown").innerHTML = "Countdown: 60";
-    document.getElementById("typeit").focus();
-    document.getElementById("typeit").disabled = false;
-
+    load();
 }
 
 var timeInSecs;
