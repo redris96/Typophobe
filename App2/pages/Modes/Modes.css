@@ -26,7 +26,27 @@
 	width: 100%;
 }
 
-	.fragment section[role=main] {
-		-ms-grid-row: 2;
-		height: 100%;
-	}
+.fragment section[role=main] {
+	-ms-grid-row: 2;
+	height: 100%;
+}
+#Modules {
+    overflow-x:auto;
+    width:100%;
+}
+.module{
+	 width: 10vw;
+	 background-color: #000;
+	 transition: background-color 0.2s linear 0s;
+	 border-style: solid;
+	 border-color: #151414;
+	 height: 5vh;
+     text-align:center;
+	 
+}
+
+.module:hover{
+	background-color:#5F5F5F;
+	color: #fff;
+	border-color: #5F5F5F;
+}

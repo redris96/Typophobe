@@ -1,5 +1,6 @@
 ﻿// For an introduction to the Page Control template, see the following documentation:
 // http://go.microsoft.com/fwlink/?LinkId=232511
+var moduleList;
 (function () {
     "use strict";
 
@@ -7,10 +8,25 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
+            
+
+            //...
+            moduleList = JSON.parse(localStorage["moduleList"]);
+            var modcontainer = document.getElementById("modulesTable");
+            for (var module in moduleList) {
+                var temp = document.createElement("div");
+                var temp2 = document.createElement("td");
+                temp.innerText = moduleList[module];
+                temp.className = "module";
+                temp.setAttribute("onclick", "loadPara('" + moduleList[module] + "')");
+                temp2.appendChild(temp);
+                modcontainer.appendChild(temp2);
+            }
         },
 
         unload: function () {
             // TODO: Respond to navigations away from this page.
+            localStorage["moduleList"] = JSON.stringify(moduleList);
         },
 
         updateLayout: function (element) {
@@ -22,7 +38,7 @@
 })();
 function loadPara(x) {
     localStorage.setItem("currentMode",x);
-    var msg = Windows.UI.Popups.MessageDialog("Mode Applied!");
+    var msg = Windows.UI.Popups.MessageDialog("Mode: "+x+"Applied!");
     msg.showAsync();
 }
 function quickC() {

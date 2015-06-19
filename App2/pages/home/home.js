@@ -1,6 +1,6 @@
 ﻿(function () {
     "use strict";
-    
+
     WinJS.UI.Pages.define("/pages/home/home.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
@@ -13,7 +13,9 @@
             theater.describe("Typophobe", { speed: .8, accuracy: .4, invincibility: 0.5 }, "#typophobe");
             var i = 0;
             theater.write("Typophobe:Typophobe", 400);
-
+            if (localStorage.getItem["firstrun"] == null) {
+                firstrun();
+            }
         },
         linkClickEventHandler: function (eventInfo) {
         eventInfo.preventDefault();

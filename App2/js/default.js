@@ -7,6 +7,9 @@
     var nav = WinJS.Navigation;
     var sched = WinJS.Utilities.Scheduler;
     var ui = WinJS.UI;
+    if (localStorage.getItem["firstrun"] == null) {
+        firstrun();
+    }
     choose();
     appendText();
     
@@ -56,7 +59,9 @@ function appendText() {
     //localStorage.setItem("top3","0");
     //localStorage.setItem("Music", "OFF");
 }
-function choose() {
+function firstrun() {
+    var moduleList = ["defaultmode", "CPP"];
+    localStorage["moduleList"] = JSON.stringify(moduleList);
     localStorage.setItem("currentMode", "defaultmode");
     localStorage.setItem("defaultmode", 10);
     localStorage.setItem("defaultmode1", "Now seven world think timed while her. Spoil large oh he rooms on since an. Am up unwilling eagerness perceived incommode. Are not windows set luckily musical hundred can. Collecting if sympathize middletons be of of reasonably. Horrible so kindness at thoughts exercise no weddings subjects. The mrs gay removed towards journey chapter females offered not. Led distrusts otherwise who may newspaper but. Last he dull am none he mile hold as. She exposed painted fifteen are noisier mistake led waiting. Surprise not wandered speedily husbands although yet end. Are court tiled cease young built fat one man taken. We highest ye friends is exposed equally in. Ignorant had too strictly followed. Astonished as travelling assistance or unreserved oh pianoforte ye. Five with seen put need tore add neat. Bringing it is he returned received raptures.Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial two promise. Greatly who affixed suppose but enquire compact prepare all put. Added forth chief trees but rooms think may. Wicket do manner others seemed enable rather in. Excellent own discovery unfeeling sweetness questions the gentleman. Chapter shyness matters mr parlors if mention thought. ");
@@ -75,4 +80,7 @@ function choose() {
     localStorage.setItem("CPP3", 'include < iostream > include < math.h > using namespace std; int main() { int startNum, endNum; int found=0, count=0; cout << "Enter Number START of Range: "; cin >> startNum; cout << "Enter Number END of Range: "; cin >> endNum; for ( int i = startNum; i < =endNum; i++) { for ( int j=2;j < =sqrt(i); j++) { if ( i%j==0 ) count++; } if ( count==0 || i!=1 ) { found++; cout << "Prime Number - >  " << i << endl; count=0; } count=0; } cout << "Total Prime Number Between Range " << startNum << " to " << endNum << " = " << found << endl; return 1; }');
     localStorage.setItem("CPP4", 'include < iostream > using namespace std; int main() { int num1, num2, num3; cout << " Enter value for first number"; cin >> num1; cout << " Enter value for second number"; cin >> num2; cout << " Enter value for third number"; cin >> num3; if ( num1 > num2 || num1 > num3 )  { cout << " First number is greatest:" << endl << "whick is= " << num1; } else if ( num2 > num1 || num2 > num3 )  { cout << " Second number is greatest" << endl << "whick is= " << num2; } else { cout << " Third number is greatest" << endl << "whick is= " << num3; } return 0; }');
     localStorage.setItem("CPP5", '');
+}
+function choose() {
+    
 }
