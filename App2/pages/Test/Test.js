@@ -56,7 +56,7 @@ var flag = 1;
 var wh = 98;
 var gc = 0;
 var c, wc = 0, pr = 0;
-var u = legit.length;
+var u;
 function setup() {
     document.getElementById("typeit").value = "";
     i = 0;
