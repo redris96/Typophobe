@@ -30,3 +30,86 @@
 		-ms-grid-row: 2;
 		height: 100%;
 	}
+ /*  Clock CSS .....  */
+* {
+  box-sizing: border-box;   
+}
+
+.wrapper {
+  width: 150px;
+  height: 150px;
+  margin: 10px auto;
+  position: relative;
+  background: #1E1E1E;
+}
+
+.pie {
+  width: 50%;
+  height: 100%;
+  transform-origin: 100% 50%;
+  position: absolute;
+  background: radial-gradient(circle at left center, #333335 0px, #9D9D9E 100%);
+  border: 11px solid #E5E5E6;
+}
+
+.spinner {
+  border-radius: 100% 0 0 100% / 50% 0 0 50%;
+  z-index: 200;
+  background: radial-gradient(circle at right center, #333335 0px, #9D9D9E 100%);
+  border-right: none;
+  animation: rota 60s linear 1;
+  animation-play-state: running; /* Adjust the state of the clock.. running or paused */
+}
+
+.filler {
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+  left: 50%;
+  opacity: 0;
+  z-index: 100;
+  animation: fill 60s steps(1, end) 1;
+  border-left: none;
+  animation-play-state: running; /* Adjust the state of the clock.. running or paused */
+}
+
+.mask {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  opacity: 1;
+  z-index: 300;
+  animation: mask 60s steps(1, end) 1;
+  animation-play-state: running; /* Adjust the state of the clock.. running or paused */
+}
+
+
+@keyframes rota {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes mask {
+  0% {
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fill {
+  0% {
+    opacity: 0;
+  }
+  50%{
+      opacity: 1;
+    }
+  100% {
+    opacity: 1;
+  }
+}

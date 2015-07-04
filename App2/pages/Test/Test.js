@@ -67,6 +67,11 @@ function setup() {
 }
 function x(event) {
     startTimer(60);
+   /* 
+    (".spinner").Test('animation-play-state', 'running');
+    ("filler").Test('animation-play-state', 'running');
+    ("mask").Test('animation-play-state', 'running');
+    */
     var display = document.getElementById("dis");
     var a = event.keyCode;
     if (a==32) {

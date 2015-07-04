@@ -25,11 +25,19 @@
                     <h3 id="acc">Accuracy: 0%</h3>
                     <h3 id="wc">WPM: 0</h3> 
                     <h3 id="countdown">Countdown: 60</h3> <br />
+                <!--Clock animation start -->
+                <div class="wrapper">
+                    <div class="pie spinner"></div>
+                    <div class="pie filler"></div>
+                    <div class="mask"></div>
+                </div>
+                <!--end -->
                     <!--<button id="but" onclick="reset()">Reset</button>-->
                 <button id="ran" onclick="randomize()">Randomize</button>
                 <button id="load" onclick="load()">Reset</button>
                 <!--<button onclick="load()">Load</button>-->
             </center>
+            
             <Button id="musicButton" style="position: absolute; right: 0; bottom: 0;" onclick="toggleMusic()">Music: OFF</Button>
             <audio id="music" src="/dragon.mp3" />
         </section> 
