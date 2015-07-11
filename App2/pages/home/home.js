@@ -13,7 +13,11 @@
             theater.describe("Typophobe", { speed: .8, accuracy: .4, invincibility: 0.5 }, "#typophobe");
             var i = 0;
             theater.write("Typophobe:Typophobe", 400);
-            if (localStorage.getItem["firstrun"] == null) {
+            console.log(localStorage["firstrun"]);
+
+            if (localStorage["firstrun"] == null) {
+                console.log("firstrun");
+                localStorage["firstrun"] = 1;
                 firstrun();
             }
         },

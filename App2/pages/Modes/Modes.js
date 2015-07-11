@@ -14,6 +14,7 @@ var moduleList;
             moduleList = JSON.parse(localStorage["moduleList"]);
             var modcontainer = document.getElementById("modulesTable");
             for (var module in moduleList) {
+                console.log(moduleList[module] + " , ");
                 var temp = document.createElement("div");
                 var temp2 = document.createElement("td");
                 temp.innerText = moduleList[module];

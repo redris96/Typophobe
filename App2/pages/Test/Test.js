@@ -11,8 +11,9 @@
             console.log("Initialized");
             var temp = localStorage.getItem("Music");
             console.log("Music checked");
+            console.log("legit before : " + legit);
             randomize();
-            console.log("Randomized");
+            console.log("legit now : " + legit);
             if (temp == "ON") {
                 toggleMusic();     
             }
@@ -47,7 +48,7 @@ function toggleMusic() {
 //var para = localStorage.getItem("" + x);
 console.log("first load");
 var nx,was=0;
-var legit = localStorage.getItem("default");
+var legit="";
 var i = 0;
 var tp = 0;
 //while (legit[tp] != " ") tp++;
@@ -166,6 +167,8 @@ function randomize() {
     }
     localStorage.setItem("default", localStorage.getItem(curr + nx.toString()));
     load();
+    console.log("Randomized");
+
 }
 
 var timeInSecs;
