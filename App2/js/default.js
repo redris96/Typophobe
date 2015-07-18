@@ -60,6 +60,8 @@ function appendText() {
     //localStorage.setItem("Music", "OFF");
 }
 function firstrun() {
+    var scores = {};
+    localStorage["scores"] = JSON.stringify(scores);
     var moduleList = ["defaultmode", "CPP","smallwords"];
     localStorage["moduleList"] = JSON.stringify(moduleList);
     localStorage.setItem("currentMode", "defaultmode");
