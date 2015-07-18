@@ -196,7 +196,7 @@ function tick() {
         var ch = acc * wc / 100;
         var msgBox = document.getElementById("messageBox");
         msgBox.innerHTML = document.getElementById("wc").innerHTML + " Accuracy: " + (Number((gc / (i - wc)) * 100).toPrecision(4)).toString() + "%";
-        $(msgBox).slideDown(1000, function () { setTimeout(function () { $(msgBox).slideUp(1000, function () { randomize()}) }, 2000); });
+        $(msgBox).slideDown(1000, function () { setTimeout(function () { $(msgBox).slideUp(1000, function () { randomize();}) }, 2000); });
     }    
     document.getElementById("countdown").innerHTML = "Countdown: " + secs;
 }
