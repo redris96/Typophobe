@@ -197,7 +197,15 @@ function tick() {
         var msgBox = document.getElementById("messageBox");
         msgBox.innerHTML = document.getElementById("wc").innerHTML + " Accuracy: " + (Number((gc / (i - wc)) * 100).toPrecision(4)).toString() + "%";
         $(msgBox).slideDown(1000, function () { setTimeout(function () { $(msgBox).slideUp(1000, function () { randomize();}) }, 2000); });
-    }    
+        var scores = JSON.parse(localStorage["scores"]);
+        var score = {};
+        score["type"] = localStorage.getItem("currentMode");
+        score["wpm"] = document.getElementById("wc").innerHTML;
+        score["accuracy"] = (Number((gc / (i - wc)) * 100).toPrecision(4));
+        console.log(JSON.stringify(score));
+        scores["scores"].push(score);
+        localStorage["scores"] = JSON.stringify(scores);
+    }
     document.getElementById("countdown").innerHTML = "Countdown: " + secs;
 }
 

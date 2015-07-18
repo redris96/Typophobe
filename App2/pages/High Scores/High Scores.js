@@ -7,6 +7,7 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
+            
         },
 
         unload: function () {
@@ -21,5 +22,6 @@
     });
 })();
 function loadx() {
-    document.getElementById("high").innerHTML = "" + "<div  class=\" first\" >1:" + "\t\t\t" + parseInt(localStorage.getItem("top1")) + "</div> <div  class=\" second\" >2: " + "\t\t\t" + parseInt(localStorage.getItem("top2")) + "</div> <div   class=\" third\" >3: " + "\t\t\t" + parseInt(localStorage.getItem("top3")) + "</div>";
+    document.getElementById("high").innerHTML = localStorage["scores"];
+    var array = JSON.parse(localStorage["scores"])["scores"];
 }

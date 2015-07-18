@@ -61,6 +61,7 @@ function appendText() {
 }
 function firstrun() {
     var scores = {};
+    scores["scores"] = [];
     localStorage["scores"] = JSON.stringify(scores);
     var moduleList = ["Moderate", "CPP","Easy"];
     localStorage["moduleList"] = JSON.stringify(moduleList);
