@@ -191,44 +191,13 @@ function tick() {
     else {
         clearInterval(ticker);
         dis();
-        var msg = new Windows.UI.Popups.MessageDialog("");
-        
+
         var acc=(Number((gc / (i-wc)) * 100).toPrecision(4));
         var ch = acc * wc / 100;
-        top1 = parseInt(localStorage.getItem("top1"));
-        top2 = parseInt(localStorage.getItem("top2"));
-        top3 = parseInt(localStorage.getItem("top3"));
-        var state = 0;
-        if(ch>top1)
-        {
-            top3 = top2;
-            top2 = top1;
-            top1 = ch;
-            state = 1;
-        }
-        else if(ch>top2)
-        {
-            top3=top2;
-            top2 = ch;
-        }
-        else if(ch>top3)
-        {
-            top3 = ch;
-        }
-        msg.title = document.getElementById("wc").innerHTML + " Accuracy: " + (Number((gc / (i-wc)) * 100).toPrecision(4)).toString() + "%"
-        if (state == 1) {
-            msg.title += " Highscore!";
-        }
-        /*msg.commands.append(new Windows.UI.Popups.UICommand(
-                "Try again",));
-        msg.commands.append(
-            new Windows.UI.Popups.UICommand("Back", commandInvokedHandler));*/
-        msg.showAsync();
-        localStorage.setItem("top1",""+top1);
-        localStorage.setItem("top2", "" + top2);
-        localStorage.setItem("top3","" + top3);
-    }
-    
+        var msgBox = document.getElementById("messageBox");
+        msgBox.innerHTML = document.getElementById("wc").innerHTML + " Accuracy: " + (Number((gc / (i - wc)) * 100).toPrecision(4)).toString() + "%";
+        $(msgBox).slideDown(1000, function () { setTimeout(function () { $(msgBox).slideUp(1000, function () { randomize()}) }, 2000); });
+    }    
     document.getElementById("countdown").innerHTML = "Countdown: " + secs;
 }
 
@@ -238,7 +207,7 @@ function dis() {
 
 function doScroll() {
     //$('#dis').scrollTop($('#dis').scrollTop() + 53);
-    var sc = $("#dis").height() * .34;
+    var sc = $("#dis").height() * .125;
     var lol = $("#dis").scrollTop(); 
     $("#dis").animate({ scrollTop: lol+sc}, "slow");
 }
